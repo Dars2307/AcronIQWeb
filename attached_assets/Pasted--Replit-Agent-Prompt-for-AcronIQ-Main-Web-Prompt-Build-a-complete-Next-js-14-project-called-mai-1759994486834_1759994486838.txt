@@ -1,0 +1,136 @@
+🧠 Replit Agent Prompt for AcronIQ Main-Web
+
+Prompt:
+
+Build a complete Next.js 14 project called main-web for AcronIQ Research, a professional AI-powered intelligence and research company.
+
+🌐 Brand & Design
+
+Use modern, minimalist British-style design: white background, deep navy, gradient blue accents.
+
+Base all UI materials on https://uiverse.io/
+ components for consistency and elegance.
+
+Font: Inter or Poppins, professional and sleek.
+
+Maintain the AcronIQ “Q” logo styling (layered gradient blue shades).
+
+Ensure responsive layout for desktop and mobile.
+
+Keep design lightweight, SEO-friendly, and fast.
+
+⚙️ Framework & Setup
+
+Framework: Next.js 14 (App Router)
+
+Language: TypeScript
+
+CSS: Tailwind CSS
+
+Package Manager: npm
+
+Include framer-motion for subtle animations.
+
+Use React Icons for lightweight iconography.
+
+Add meta tags and OpenGraph data for SEO.
+
+📄 Pages to Create
+1. / – Landing Page
+
+Hero section with AcronIQ logo, slogan:
+“Transforming Ideas into Intelligent Solutions.”
+
+Subtext: “We provide AI-driven insight and research to empower businesses and drive innovation.”
+
+CTA buttons:
+
+Access Portal → redirect to https://portal.acroniq.co.uk
+
+Contact Us → /contact page.
+
+Add an abstract graphic of the shaded “Q” as a background or hero element.
+
+Include a “Trusted by innovators and thinkers” section with dummy logos.
+
+Add a Features section summarising the products:
+
+TrueNorth (AI strategist & validator)
+
+AcronIQ Signals (market intelligence & alerts)
+
+NexusOne Portal (client platform)
+
+Add a footer with copyright © 2025 AcronIQ Research and links to Privacy Policy and Terms.
+
+2. /about – About AcronIQ
+
+Explain AcronIQ’s mission and focus on intelligence, AI, and research innovation.
+
+Include a section on “Our Tools” linking to internal systems (TrueNorth, Signals, Portal).
+
+Add a simple timeline animation using framer-motion showing AcronIQ’s vision growth.
+
+3. /products – Products
+
+Use clean cards (from uiverse.io) for each product:
+
+TrueNorth – AI strategist and business validator.
+
+AcronIQ Signals – Trend and early-warning system.
+
+NexusOne Portal – Secure client workspace.
+
+Each card has a “Learn More” button linking to /contact.
+
+4. /contact – Contact Page
+
+Include a contact form (name, email, message).
+
+Form submission should just show a “Message Sent” toast (no backend integration yet).
+
+Include AcronIQ’s placeholder email and social links.
+
+5. /legal/privacy and /legal/terms
+
+Add simple placeholder pages for legal text.
+
+🧩 Navigation & Layout
+
+Global navbar with links: Home, About, Products, Contact.
+
+Footer: copyright + quick links.
+
+Consistent layout component (/components/Layout.tsx).
+
+✨ Extras
+
+Use next/image for optimised images.
+
+Use dynamic imports for heavy components.
+
+Ensure smooth scroll and transitions.
+
+Keep it professional yet visually engaging.
+
+🚀 Deployment Ready
+
+Prepare it for Vercel deployment with proper config (next.config.js, favicon, SEO tags).
+
+Ensure all routes are clean and client-side navigable.
+
+✅ Output
+
+Provide full folder structure and all essential files.
+
+Then generate a README.md describing:
+
+Project setup steps
+
+Customisation guide
+
+Deployment steps to Vercel
+
+How to connect future dynamic content from acroniq-backend
+
+Focus on high-quality front-end implementation and elegant design consistency.
