@@ -55,6 +55,14 @@ export default function Home() {
           <motion.p
             {...fadeInUp}
             transition={{ delay: 0.2, duration: 0.6 }}
+            className="text-2xl md:text-3xl font-semibold text-blue-200 mb-6 max-w-4xl mx-auto"
+          >
+            Strategic clarity in hours, not weeks — without consultancy costs or AI guesswork.
+          </motion.p>
+
+          <motion.p
+            {...fadeInUp}
+            transition={{ delay: 0.3, duration: 0.6 }}
             className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto"
           >
             We provide AI-driven insight and research to empower businesses and drive innovation.
