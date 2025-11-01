@@ -57,7 +57,7 @@ export default function Home() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="text-2xl md:text-3xl font-semibold text-blue-200 mb-6 max-w-4xl mx-auto"
           >
-            Strategic clarity in hours, not weeks — without consultancy costs or AI guesswork.
+            Strategic clarity in hours — not weeks. No guesswork, no consultancy overhead.
           </motion.p>
 
           <motion.p
@@ -82,7 +82,7 @@ export default function Home() {
               <FaRocket className="inline mr-2" />
               Access Portal
             </a>
-            <Link href="/contact" className="btn-secondary text-lg bg-transparent text-white border-white hover:bg-white hover:text-navy">
+            <Link href="/contact" className="btn-secondary text-lg bg-transparent text-white border-2 border-white hover:bg-white hover:text-navy hover:shadow-lg transition-all duration-300">
               Contact Us
             </Link>
           </motion.div>

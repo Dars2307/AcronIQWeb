@@ -2,11 +2,20 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -16,15 +25,17 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
+    <nav className={`bg-white sticky top-0 z-50 transition-all duration-300 ${
+      isScrolled ? 'shadow-lg shadow-gray-200/50' : 'shadow-md'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center space-x-2">
             <Image 
-              src="/logo.png" 
+              src="/images/original/Acron first logo transparent.png" 
               alt="AcronIQ Logo" 
-              width={40} 
-              height={40}
+              width={48} 
+              height={48}
               className="object-contain"
             />
             <span className="font-bold text-xl text-navy">AcronIQ</span>

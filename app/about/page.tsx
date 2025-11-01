@@ -2,14 +2,14 @@
 
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
-import { FaBullseye, FaLightbulb, FaUsers } from "react-icons/fa";
+import { FaBullseye, FaLightbulb, FaUsers, FaRocket, FaFlag, FaGlobe, FaShieldAlt } from "react-icons/fa";
 
 export default function About() {
   const timeline = [
-    { year: "2024", event: "Founded with a vision", description: "AcronIQ Research was born from the idea of democratizing AI-powered intelligence" },
-    { year: "2024", event: "TrueNorth Launch", description: "Introduced our flagship AI strategist to help businesses validate and refine their ideas" },
-    { year: "2025", event: "Expanding Horizons", description: "Launched AcronIQ Signals and NexusOne Portal to complete our intelligence suite" },
-    { year: "Future", event: "Global Impact", description: "Scaling our solutions to empower businesses worldwide" },
+    { year: "2024", event: "Founded with a vision", description: "AcronIQ Research was born from the idea of democratizing AI-powered intelligence", icon: <FaLightbulb className="text-blue-600" /> },
+    { year: "2024", event: "TrueNorth Launch", description: "Introduced our flagship AI strategist to help businesses validate and refine their ideas", icon: <FaRocket className="text-blue-600" /> },
+    { year: "2025", event: "Expanding Horizons", description: "Launched AcronIQ Signals and NexusOne Portal to complete our intelligence suite", icon: <FaFlag className="text-blue-600" /> },
+    { year: "Future", event: "Global Impact", description: "Scaling our solutions to empower businesses worldwide", icon: <FaGlobe className="text-blue-600" /> },
   ];
 
   const tools = [
@@ -64,9 +64,18 @@ export default function About() {
               <p className="text-gray-600 text-lg mb-4">
                 We combine advanced artificial intelligence with deep research expertise to deliver actionable insights that drive real business outcomes. From validating strategic decisions to detecting emerging market trends, we empower our clients to stay ahead of the curve.
               </p>
-              <p className="text-gray-600 text-lg">
+              <p className="text-gray-600 text-lg mb-4">
                 Our commitment is to make sophisticated AI-powered research accessible, practical, and transformative for businesses of all sizes.
               </p>
+              <div className="bg-blue-50 border-l-4 border-blue-600 p-4 rounded-r-lg">
+                <p className="text-blue-800 font-semibold flex items-center">
+                  <FaShieldAlt className="mr-2" />
+                  Ethical AI & Data Responsibility
+                </p>
+                <p className="text-blue-700 text-sm mt-1">
+                  We prioritise transparency, privacy, and responsible AI practices in all our solutions, ensuring your data remains secure whilst delivering actionable insights.
+                </p>
+              </div>
             </motion.div>
 
             <motion.div
@@ -156,7 +165,15 @@ export default function About() {
                 </div>
                 
                 <div className="hidden md:flex w-2/12 justify-center">
-                  <div className="w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow-lg z-10" />
+                  <motion.div 
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.2 + 0.3 }}
+                    className="w-12 h-12 bg-white rounded-full border-4 border-blue-600 shadow-lg z-10 flex items-center justify-center"
+                  >
+                    {item.icon}
+                  </motion.div>
                 </div>
 
                 <div className="hidden md:block w-5/12" />

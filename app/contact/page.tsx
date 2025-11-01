@@ -125,7 +125,7 @@ export default function Contact() {
             >
               <div className="card">
                 <h2 className="text-3xl font-bold text-navy mb-6">Send us a Message</h2>
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-8">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                       Your Name
@@ -138,7 +138,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
-                      placeholder="John Doe"
+                      placeholder="Enter your full name"
                     />
                   </div>
 
@@ -154,7 +154,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
-                      placeholder="john@example.com"
+                      placeholder="Enter your email address"
                     />
                   </div>
 
@@ -170,7 +170,7 @@ export default function Contact() {
                       required
                       rows={5}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition resize-none"
-                      placeholder="Tell us about your project or inquiry..."
+                      placeholder="Tell us about your project, goals, or how we can help transform your business..."
                     />
                   </div>
 
