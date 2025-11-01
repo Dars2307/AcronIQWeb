@@ -33,7 +33,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center space-x-2">
             <Image 
               src="/images/original/Acron first logo transparent.png" 
-              alt="AcronIQ Logo" 
+              alt="AcronIQ Research Logo" 
               width={48} 
               height={48}
               className="object-contain"
