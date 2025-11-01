@@ -3,7 +3,7 @@
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { FaEnvelope, FaLinkedin, FaTwitter, FaCheckCircle } from "react-icons/fa";
+import { FaEnvelope, FaLinkedin, FaTwitter, FaCheckCircle, FaExclamationTriangle, FaSpinner } from "react-icons/fa";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -12,15 +12,42 @@ export default function Contact() {
     message: "",
   });
   const [showToast, setShowToast] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setShowToast(true);
-    setFormData({ name: "", email: "", message: "" });
-    
-    setTimeout(() => {
-      setShowToast(false);
-    }, 3000);
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: "", email: "", message: "" });
+        setShowToast(true);
+        setTimeout(() => {
+          setShowToast(false);
+          setSubmitStatus(null);
+        }, 5000);
+      } else {
+        const errorData = await response.json();
+        console.error('Form submission error:', errorData);
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Network error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -37,10 +64,29 @@ export default function Contact() {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
-          className="fixed top-20 right-4 z-50 bg-green-500 text-white px-6 py-4 rounded-lg shadow-lg flex items-center space-x-3"
+          className={`fixed top-20 right-4 z-50 px-6 py-4 rounded-lg shadow-lg flex items-center space-x-3 ${
+            submitStatus === 'success' 
+              ? 'bg-green-500 text-white' 
+              : 'bg-red-500 text-white'
+          }`}
         >
-          <FaCheckCircle className="text-2xl" />
-          <span className="font-semibold">Message Sent Successfully!</span>
+          {submitStatus === 'success' ? (
+            <>
+              <FaCheckCircle className="text-2xl" />
+              <div>
+                <div className="font-semibold">Message Sent Successfully!</div>
+                <div className="text-sm opacity-90">We'll get back to you soon.</div>
+              </div>
+            </>
+          ) : (
+            <>
+              <FaExclamationTriangle className="text-2xl" />
+              <div>
+                <div className="font-semibold">Failed to Send Message</div>
+                <div className="text-sm opacity-90">Please try again or email us directly.</div>
+              </div>
+            </>
+          )}
         </motion.div>
       )}
 
@@ -174,8 +220,21 @@ export default function Contact() {
                     />
                   </div>
 
-                  <button type="submit" className="btn-primary w-full">
-                    Send Message
+                  <button 
+                    type="submit" 
+                    disabled={isSubmitting}
+                    className={`btn-primary w-full flex items-center justify-center space-x-2 ${
+                      isSubmitting ? 'opacity-75 cursor-not-allowed' : ''
+                    }`}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <FaSpinner className="animate-spin" />
+                        <span>Sending...</span>
+                      </>
+                    ) : (
+                      <span>Send Message</span>
+                    )}
                   </button>
                 </form>
               </div>
