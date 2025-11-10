@@ -22,12 +22,12 @@ const config: Config = {
             end: '#60A5FA',
           },
         },
-        // Palantir Gotham HQ Palette (Refined Executive)
-        charcoal: '#141516',        // Warmer primary background (removes abyss effect)
-        charcoalLight: '#2B2D2E',   // Secondary surfaces  
-        stone: '#C7C9C9',           // Warmer neutral text (less clinical)
-        bronze: '#B8956A',          // Premium warmer bronze (more inviting)
-        offwhite: '#E6E7E8',        // Softer secondary text
+        // Previous welcoming color palette
+        charcoal: '#1f2937',        // Dark gray for contrast sections
+        charcoalLight: '#374151',   // Lighter gray for secondary sections  
+        stone: '#6b7280',           // Medium gray for text
+        bronze: '#3b82f6',          // Blue accent color
+        offwhite: '#f9fafb',        // Light background
       },
       fontFamily: {
         sans: ['Inter', 'Poppins', 'system-ui', 'sans-serif'],

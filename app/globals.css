@@ -9,12 +9,6 @@
     letter-spacing: 0.01em;
   }
 
-  /* Palantir Gotham HQ aesthetic - for dark sections */
-  .gotham-hq {
-    background-color: #141516;
-    color: #ffffff;
-  }
-
   /* Remove link underlines unless intentional */
   a {
     text-decoration: none;
@@ -22,10 +16,10 @@
 }
 
 @layer components {
-  /* Refined Strategic button - warmer and more present */
+  /* Professional blue button styling */
   .btn-strategic {
-    border: 1px solid #B8956A;
-    color: #B8956A;
+    border: 1px solid #3b82f6;
+    color: #3b82f6;
     padding: 0.75rem 1.5rem;
     font-weight: 500;
     letter-spacing: 0.025em;
@@ -34,8 +28,8 @@
   }
   
   .btn-strategic:hover {
-    background-color: #B8956A;
-    color: #141516;
+    background-color: #3b82f6;
+    color: #ffffff;
   }
 }
 

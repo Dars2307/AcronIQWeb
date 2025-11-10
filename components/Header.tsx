@@ -25,18 +25,15 @@ export function Header() {
       <header className="w-full bg-white border-b border-gray-200 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            {/* Logo with Seal + Wordmark */}
-            <Link href="/" className="flex items-center gap-4">
+            {/* Logo */}
+            <Link href="/" className="flex items-center">
               <Image
-                src="/brand/acroniq-seal.svg"
-                alt="AcronIQ Strategic Intelligence Seal"
-                width={48}
-                height={52}
+                src="/images/AcronIQ-Primary-Logo.png"
+                alt="AcronIQ Research Logo"
+                width={100}
+                height={50}
                 className="object-contain"
               />
-              <span className="font-serif text-bronze tracking-[0.04em] text-base uppercase font-medium">
-                ACRONIQ
-              </span>
             </Link>
 
             {/* Desktop Navigation */}
