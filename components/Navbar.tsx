@@ -21,6 +21,8 @@ export default function Navbar() {
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/products", label: "Products" },
+    { href: "/journal", label: "Journal" },
+    { href: "/roadmap", label: "Roadmap" },
     { href: "/contact", label: "Contact" },
   ];
 
@@ -52,10 +54,10 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
-              href="/contact"
+              href="/early-access"
               className="btn-secondary border-2 border-gray-300 text-gray-600 hover:border-gray-400 hover:text-gray-700 relative"
             >
-              Portal (Coming Soon)
+              Early Access
             </Link>
           </div>
 
@@ -80,10 +82,10 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
-              href="/contact"
+              href="/early-access"
               className="block mt-2 btn-secondary border-2 border-gray-300 text-gray-600 hover:border-gray-400 hover:text-gray-700 text-center"
             >
-              Portal (Coming Soon)
+              Early Access
             </Link>
           </div>
         )}

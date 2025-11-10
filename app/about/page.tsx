@@ -2,184 +2,115 @@
 
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
-import { FaBullseye, FaLightbulb, FaUsers, FaRocket, FaFlag, FaGlobe, FaShieldAlt } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaBrain } from "react-icons/fa";
 
 export default function About() {
-  const timeline = [
-    { year: "2024", event: "Founded with a vision", description: "AcronIQ Research was born from the idea of democratizing AI-powered intelligence", icon: <FaLightbulb className="text-blue-600" /> },
-    { year: "2024", event: "TrueNorth Launch", description: "Introduced our flagship AI strategist to help businesses validate and refine their ideas", icon: <FaRocket className="text-blue-600" /> },
-    { year: "2025", event: "Expanding Horizons", description: "Launched AcronIQ Signals and NexusOne Portal to complete our intelligence suite", icon: <FaFlag className="text-blue-600" /> },
-    { year: "Future", event: "Global Impact", description: "Scaling our solutions to empower businesses worldwide", icon: <FaGlobe className="text-blue-600" /> },
-  ];
-
-  const tools = [
-    {
-      icon: <FaBullseye className="text-5xl text-blue-600" />,
-      title: "TrueNorth",
-      description: "AI-powered strategist that validates business ideas and provides actionable insights for growth.",
-    },
-    {
-      icon: <FaLightbulb className="text-5xl text-blue-600" />,
-      title: "AcronIQ Signals",
-      description: "Advanced trend detection and early-warning system for market intelligence.",
-    },
-    {
-      icon: <FaUsers className="text-5xl text-blue-600" />,
-      title: "NexusOne Portal",
-      description: "Secure collaborative workspace for clients to access insights and manage projects.",
-    },
-  ];
-
   return (
     <Layout>
-      <section className="py-20 bg-gradient-to-br from-navy to-navy-light text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Hero Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">About AcronIQ</h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              We are pioneering the future of AI-driven intelligence and research
-            </p>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+              About AcronIQ
+            </h1>
+            <div className="w-24 h-1 bg-blue-500 mx-auto mb-8"></div>
           </motion.div>
         </div>
       </section>
 
+      {/* Mission Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Mission</h2>
+            <div className="prose prose-lg mx-auto text-gray-700 leading-relaxed">
+              <p className="text-xl mb-6">
+                AcronIQ is an intelligence research organisation focused on developing systems that enhance strategic decision-making.
+              </p>
+              <p className="text-lg">
+                We build tools that allow individuals and organisations to see clearly, think precisely, and act with confidence.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Founder Section */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-4xl font-bold text-navy mb-6">Our Mission</h2>
-              <p className="text-gray-600 text-lg mb-4">
-                At AcronIQ Research, we believe that every great idea deserves the power of intelligent insight. Our mission is to transform the way businesses approach strategy, market intelligence, and decision-making through cutting-edge AI technology.
-              </p>
-              <p className="text-gray-600 text-lg mb-4">
-                We combine advanced artificial intelligence with deep research expertise to deliver actionable insights that drive real business outcomes. From validating strategic decisions to detecting emerging market trends, we empower our clients to stay ahead of the curve.
-              </p>
-              <p className="text-gray-600 text-lg mb-4">
-                Our commitment is to make sophisticated AI-powered research accessible, practical, and transformative for businesses of all sizes.
-              </p>
-              <div className="bg-blue-50 border-l-4 border-blue-600 p-4 rounded-r-lg">
-                <p className="text-blue-800 font-semibold flex items-center">
-                  <FaShieldAlt className="mr-2" />
-                  Ethical AI & Data Responsibility
-                </p>
-                <p className="text-blue-700 text-sm mt-1">
-                  We prioritise transparency, privacy, and responsible AI practices in all our solutions, ensuring your data remains secure whilst delivering actionable insights.
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Founder</h2>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden max-w-4xl mx-auto"
+          >
+            <div className="bg-gray-900 text-white p-8">
+              <div className="flex items-center space-x-6">
+                <div className="w-24 h-24 bg-blue-600 rounded-full flex items-center justify-center">
+                  <FaBrain className="text-3xl text-white" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold mb-2">Joel "Nickron" Ogunniyi</h3>
+                  <p className="text-blue-400 text-lg font-medium mb-1">Founder & Research Lead</p>
+                  <p className="text-gray-400">AcronIQ Research (United Kingdom)</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="p-8">
+              <div className="prose prose-lg text-gray-700 leading-relaxed mb-6">
+                <p>
+                  Joel leads AcronIQ's research direction and system architecture. His work focuses on applied intelligence: 
+                  combining structured analysis, market insight, and AI-driven modelling to produce clear, actionable strategy outputs.
                 </p>
               </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative"
-            >
-              <img 
-                src="/images/mission.jpg" 
-                alt="Our Mission - AI-powered intelligence network" 
-                className="w-full h-96 object-cover rounded-2xl shadow-xl"
-              />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-navy mb-4">Our Tools</h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              A comprehensive suite of AI-powered solutions designed for modern businesses
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {tools.map((tool, index) => (
-              <motion.div
-                key={tool.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-                className="card text-center"
-              >
-                <div className="flex justify-center mb-4">{tool.icon}</div>
-                <h3 className="text-2xl font-bold text-navy mb-3">{tool.title}</h3>
-                <p className="text-gray-600">{tool.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-navy mb-4">Our Journey</h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              From vision to reality - the AcronIQ story
-            </p>
-          </motion.div>
-
-          <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-200 hidden md:block" />
-
-            {timeline.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-                className={`flex items-center mb-12 ${
-                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                }`}
-              >
-                <div className={`w-full md:w-5/12 ${index % 2 === 0 ? "md:text-right md:pr-8" : "md:text-left md:pl-8"}`}>
-                  <div className="card">
-                    <span className="text-blue-600 font-bold text-xl">{item.year}</span>
-                    <h3 className="text-2xl font-bold text-navy mt-2 mb-3">{item.event}</h3>
-                    <p className="text-gray-600">{item.description}</p>
+              
+              <div className="flex items-center space-x-4">
+                <span className="text-gray-500 font-medium">Connect:</span>
+                <div className="flex space-x-3">
+                  <div className="flex items-center text-gray-400">
+                    <FaLinkedin className="mr-2" />
+                    <span className="text-sm">LinkedIn: Available when ready</span>
                   </div>
                 </div>
-                
-                <div className="hidden md:flex w-2/12 justify-center">
-                  <motion.div 
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.2 + 0.3 }}
-                    className="w-12 h-12 bg-white rounded-full border-4 border-blue-600 shadow-lg z-10 flex items-center justify-center"
-                  >
-                    {item.icon}
-                  </motion.div>
-                </div>
+              </div>
+            </div>
+          </motion.div>
 
-                <div className="hidden md:block w-5/12" />
-              </motion.div>
-            ))}
-          </div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mt-12"
+          >
+            <div className="bg-gray-900 text-white rounded-lg p-8 max-w-3xl mx-auto">
+              <h3 className="text-xl font-bold mb-4">Team Expansion</h3>
+              <p className="text-gray-400 leading-relaxed">
+                More team profiles will be added as AcronIQ expands. We are building a focused team of researchers, 
+                analysts, and engineers committed to advancing strategic intelligence capabilities.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
     </Layout>
