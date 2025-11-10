@@ -37,4 +37,15 @@
   .text-balance {
     text-wrap: balance;
   }
+  
+  /* Ensure gradient text works properly */
+  .bg-clip-text {
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  
+  .text-transparent {
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
 }
