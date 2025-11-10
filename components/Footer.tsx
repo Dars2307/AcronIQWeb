@@ -10,7 +10,7 @@ export default function Footer() {
           <div>
             <Link href="/" className="flex items-center space-x-2 mb-4">
               <Image 
-                src="/images/original/Acron first logo transparent.png" 
+                src="/images/AcronIQ-Primary-Logo.png" 
                 alt="AcronIQ Research Logo" 
                 width={40} 
                 height={40}

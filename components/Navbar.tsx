@@ -34,7 +34,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center space-x-2">
             <Image 
-              src="/images/original/Acron first logo transparent.png" 
+              src="/images/AcronIQ-Primary-Logo.png" 
               alt="AcronIQ Research Logo" 
               width={48} 
               height={48}
