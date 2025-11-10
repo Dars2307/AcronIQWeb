@@ -31,7 +31,6 @@ export default function Home() {
     },
   ];
 
-  const partners = ["InnovateCorp", "TechVision", "FutureWorks", "DataDrive", "SmartSys"];
 
   return (
     <Layout>
@@ -93,22 +92,16 @@ export default function Home() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center"
           >
-            <p className="text-gray-600 text-lg">Trusted by innovators and thinkers</p>
-            <div className="flex flex-wrap justify-center gap-8 mt-8">
-              {partners.map((partner, index) => (
-                <motion.div
-                  key={partner}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="text-2xl font-semibold text-gray-400"
-                >
-                  {partner}
-                </motion.div>
-              ))}
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-8 max-w-3xl mx-auto">
+              <h3 className="text-2xl font-bold text-navy mb-4">Building the Future of AI Research</h3>
+              <p className="text-gray-700 text-lg mb-4">
+                We're currently developing cutting-edge AI tools that will transform how businesses approach strategic decision-making and market intelligence.
+              </p>
+              <p className="text-blue-600 font-medium">
+                🚀 Join our early access programme to be amongst the first to experience these innovative solutions when they launch.
+              </p>
             </div>
           </motion.div>
         </div>
