@@ -22,21 +22,19 @@ const config: Config = {
             end: '#60A5FA',
           },
         },
-        // New Charcoal/Bronze Executive Palette
-        charcoal: {
-          deep: '#111213',      // Primary background. The room. The silence.
-          matte: '#2B2D2E',     // Secondary surfaces, panels, UI chrome.
-        },
-        stone: {
-          grey: '#B5B7BB',      // Body text. Measured. Unemotional.
-        },
-        bronze: {
-          matte: '#C28B4A',     // Signature accent. Linework. Highlights. Seal.
-        },
-        offwhite: '#E6E7E8',    // Softer white for secondary text
+        // Strategic Surgeon Palette (Charcoal/Bronze Executive)
+        charcoal: '#111213',        // Primary background
+        charcoalLight: '#2B2D2E',   // Secondary surfaces  
+        stone: '#B5B7BB',           // Body text, measured tone
+        bronze: '#C28B4A',          // Signature accent, matte finish
+        offwhite: '#E6E7E8',        // Softer secondary text
       },
       fontFamily: {
         sans: ['Inter', 'Poppins', 'system-ui', 'sans-serif'],
+        serif: ['Cormorant Garamond', 'serif'],
+      },
+      borderWidth: {
+        thin: '0.5px',
       },
     },
   },

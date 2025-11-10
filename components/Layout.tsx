@@ -1,11 +1,11 @@
-import Navbar from "./Navbar";
+import { Header } from "./Header";
 import Footer from "./Footer";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-      <main className="flex-grow">{children}</main>
+    <div className="min-h-screen bg-charcoal text-white">
+      <Header />
+      <main>{children}</main>
       <Footer />
     </div>
   );
