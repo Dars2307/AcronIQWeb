@@ -9,6 +9,12 @@
     letter-spacing: 0.01em;
   }
 
+  /* Palantir Gotham HQ aesthetic - for dark sections */
+  .gotham-hq {
+    background-color: #141516;
+    color: #ffffff;
+  }
+
   /* Remove link underlines unless intentional */
   a {
     text-decoration: none;
@@ -16,19 +22,20 @@
 }
 
 @layer components {
-  /* Strategic Surgeon button - bronze outline only */
+  /* Refined Strategic button - warmer and more present */
   .btn-strategic {
-    border: 1px solid #C28B4A;
-    color: #C28B4A;
+    border: 1px solid #B8956A;
+    color: #B8956A;
     padding: 0.75rem 1.5rem;
     font-weight: 500;
     letter-spacing: 0.025em;
+    font-size: 0.875rem;
     transition: background-color 0.2s, color 0.2s;
   }
   
   .btn-strategic:hover {
-    background-color: #C28B4A;
-    color: #111213;
+    background-color: #B8956A;
+    color: #141516;
   }
 }
 

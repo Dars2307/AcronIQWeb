@@ -22,11 +22,11 @@ const config: Config = {
             end: '#60A5FA',
           },
         },
-        // Strategic Surgeon Palette (Charcoal/Bronze Executive)
-        charcoal: '#111213',        // Primary background
+        // Palantir Gotham HQ Palette (Refined Executive)
+        charcoal: '#141516',        // Warmer primary background (removes abyss effect)
         charcoalLight: '#2B2D2E',   // Secondary surfaces  
-        stone: '#B5B7BB',           // Body text, measured tone
-        bronze: '#C28B4A',          // Signature accent, matte finish
+        stone: '#C7C9C9',           // Warmer neutral text (less clinical)
+        bronze: '#B8956A',          // Premium warmer bronze (more inviting)
         offwhite: '#E6E7E8',        // Softer secondary text
       },
       fontFamily: {

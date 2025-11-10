@@ -2,155 +2,194 @@
 
 import Link from "next/link";
 import Layout from "@/components/Layout";
-import { FaBrain, FaChartLine, FaShieldAlt, FaRocket, FaArrowRight } from "react-icons/fa";
+import EarlyAccessModal from "@/components/EarlyAccessModal";
+import { useState } from "react";
 
 export default function Home() {
-  const features = [
-    {
-      icon: <FaBrain className="text-4xl text-blue-600" />,
-      title: "TrueNorth",
-      description: "AI-powered strategic intelligence that clarifies your path forward with precision and confidence.",
-      status: "Coming Soon"
-    },
-    {
-      icon: <FaChartLine className="text-4xl text-blue-600" />,
-      title: "AcronIQ Signals",
-      description: "Advanced market intelligence that detects opportunities and risks before they become obvious.",
-      status: "Coming Soon"
-    },
-    {
-      icon: <FaShieldAlt className="text-4xl text-blue-600" />,
-      title: "NexusOne Portal",
-      description: "Secure collaboration workspace designed for strategic decision-makers and their teams.",
-      status: "Coming Soon"
-    },
-  ];
-
+  const [showModal, setShowModal] = useState(false);
   return (
     <Layout>
-      {/* HERO SECTION */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-indigo-50 overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-blue-600 via-blue-500 to-blue-400 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-indigo-500 to-blue-300 rounded-full blur-3xl" />
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 text-gray-900">
-            Strategic Intelligence for{" "}
-            <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 bg-clip-text text-transparent">
-              High-Stakes Decisions
-            </span>
+      <EarlyAccessModal open={showModal} onClose={() => setShowModal(false)} />
+      
+      {/* HERO SECTION - Palantir Gotham HQ Aesthetic */}
+      <section className="gotham-hq min-h-screen flex items-center">
+        <div className="max-w-5xl mx-auto px-8 pt-48 pb-36">
+          <h1 className="font-serif text-6xl leading-snug text-white mb-8">
+            Strategic Intelligence for High-Stakes Decisions
           </h1>
-
-          <p className="text-xl md:text-2xl text-gray-600 mb-6 max-w-4xl mx-auto leading-relaxed">
-            We analyse complex problems, remove what doesn't matter, and reveal clear paths forward — 
-            helping leaders make confident decisions with precision and speed.
+          <p className="text-stone mt-8 max-w-3xl text-lg leading-relaxed mb-12">
+            We analyse the problem, remove what doesn't matter, and reveal the path forward —
+            clearly and without delay.
           </p>
-
-          <p className="text-lg text-gray-500 mb-12 max-w-3xl mx-auto">
-            Professional strategic intelligence services powered by AI-driven analysis and structured thinking.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/early-access"
-              className="bg-blue-600 text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl"
+          
+          <div className="flex flex-col sm:flex-row gap-6 items-start">
+            <button 
+              onClick={() => setShowModal(true)}
+              className="btn-strategic tracking-wide"
             >
-              <FaRocket className="inline mr-2" />
-              Request Strategic Briefing
-            </Link>
+              Request a Strategic Briefing
+            </button>
             <Link 
               href="/about" 
-              className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg hover:border-gray-400 hover:text-gray-900 transition-all duration-300 font-semibold text-lg"
+              className="text-stone hover:text-white font-medium py-3 transition-colors"
             >
-              Learn How We Work
+              How We Work
             </Link>
           </div>
         </div>
       </section>
 
-      {/* DEVELOPMENT STATUS */}
-      <section className="py-20 bg-gradient-to-r from-blue-50 to-indigo-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <div className="bg-white rounded-2xl shadow-xl p-8 max-w-4xl mx-auto border border-blue-100">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Building the Future of Strategic Intelligence</h3>
-              <p className="text-gray-700 text-lg mb-4 leading-relaxed">
-                We're developing cutting-edge AI tools that transform how organisations approach strategic decision-making, 
-                market intelligence, and operational clarity.
+      {/* PROBLEM STATEMENT */}
+      <section className="bg-charcoalLight text-offwhite py-32">
+        <div className="max-w-5xl mx-auto px-8">
+          <div className="max-w-3xl space-y-12">
+            <p className="text-2xl leading-relaxed">
+              Most organisations suffer from noise.
+            </p>
+            <p className="text-2xl leading-relaxed">
+              Information without hierarchy. Data without clarity.
+            </p>
+            <p className="text-2xl leading-relaxed text-white font-serif">
+              We remove noise. We surface signal.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* WHAT WE DO */}
+      <section className="gotham-hq py-32">
+        <div className="max-w-6xl mx-auto px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
+            <div className="px-8 py-16 border-r border-bronze/20">
+              <h3 className="text-xl font-serif mb-6 text-bronze">Strategic Clarity</h3>
+              <p className="text-stone leading-relaxed">
+                We identify the decision that must be made, and the factors that determine it.
               </p>
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                <p className="text-blue-800 font-medium">
-                  🚀 Join our early access programme to be among the first to experience these innovative solutions when they launch.
-                </p>
+            </div>
+            <div className="px-8 py-16 border-r border-bronze/20">
+              <h3 className="text-xl font-serif mb-6 text-bronze">Analytical Precision</h3>
+              <p className="text-stone leading-relaxed">
+                We apply structured reasoning and AI-assisted analysis to reveal what matters.
+              </p>
+            </div>
+            <div className="px-8 py-16">
+              <h3 className="text-xl font-serif mb-6 text-bronze">Decisive Action</h3>
+              <p className="text-stone leading-relaxed">
+                We provide clear recommendations, grounded in evidence, ready to implement.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* OUR INSTRUMENTS */}
+      <section className="bg-charcoalLight text-white py-32">
+        <div className="max-w-5xl mx-auto px-8">
+          <div className="mb-20">
+            <h2 className="font-serif text-3xl mb-6 text-white">The Instruments</h2>
+            <p className="text-stone text-lg">Tools designed for leaders who require precision.</p>
+          </div>
+          
+          <div className="space-y-16">
+            <div className="border-l-2 border-bronze pl-8">
+              <h3 className="font-serif text-xl mb-4 text-white">TrueNorth</h3>
+              <p className="text-stone leading-relaxed text-lg">
+                An intelligence system that clarifies strategic direction.
+              </p>
+            </div>
+            <div className="border-l-2 border-bronze pl-8">
+              <h3 className="font-serif text-xl mb-4 text-white">Signals</h3>
+              <p className="text-stone leading-relaxed text-lg">
+                Detects shifts, patterns, and inflection points before they become obvious.
+              </p>
+            </div>
+            <div className="border-l-2 border-bronze pl-8">
+              <h3 className="font-serif text-xl mb-4 text-white">NexusOne</h3>
+              <p className="text-stone leading-relaxed text-lg">
+                Maintains organisational alignment and institutional memory with quiet consistency.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* HOW WE WORK */}
+      <section className="gotham-hq py-32">
+        <div className="max-w-5xl mx-auto px-8">
+          <div className="border-l-2 border-bronze pl-8 mb-20">
+            <div className="space-y-8 mb-16">
+              <p className="text-xl text-white">We work in concentrated analytical cycles.</p>
+              <p className="text-xl text-white">We engage directly with decision-makers.</p>
+              <p className="text-xl text-white">We deliver clarity in hours, not weeks.</p>
+            </div>
+            
+            <div className="space-y-12">
+              <h3 className="font-serif text-2xl text-bronze">The AcronIQ Method</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                  <h4 className="font-serif text-lg mb-3 text-white">1. Define the Decision</h4>
+                  <p className="text-stone">Isolate the choice that must be made.</p>
+                </div>
+                <div>
+                  <h4 className="font-serif text-lg mb-3 text-white">2. Gather Relevant Signals</h4>
+                  <p className="text-stone">Collect only information that affects the outcome.</p>
+                </div>
+                <div>
+                  <h4 className="font-serif text-lg mb-3 text-white">3. Apply Structured Analysis</h4>
+                  <p className="text-stone">Process data through disciplined reasoning frameworks.</p>
+                </div>
+                <div>
+                  <h4 className="font-serif text-lg mb-3 text-white">4. Deliver Strategic Direction</h4>
+                  <p className="text-stone">Present clear recommendations with implementation path.</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* PRODUCTS SECTION */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Strategic Intelligence Tools</h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto mb-2">
-              Professional-grade AI tools designed to enhance strategic decision-making
-            </p>
-            <p className="text-blue-600 font-medium">
-              All products currently in development
-            </p>
+      {/* PROOF */}
+      <section className="bg-charcoalLight text-white py-32">
+        <div className="max-w-5xl mx-auto px-8">
+          <div className="mb-20">
+            <h2 className="font-serif text-3xl mb-8 text-white">Trusted by Innovators and Strategic Leaders</h2>
+            <p className="text-stone text-lg mb-4">Our work is often confidential.</p>
+            <p className="text-stone text-lg">Discretion is part of the service.</p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <div
-                key={feature.title}
-                className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 border border-gray-100 hover:border-blue-200"
-              >
-                <div className="flex justify-center mb-6">{feature.icon}</div>
-                <div className="flex items-center justify-center gap-3 mb-4">
-                  <h3 className="text-2xl font-bold text-gray-900">{feature.title}</h3>
-                  <span className="px-3 py-1 bg-blue-100 text-blue-800 text-sm font-semibold rounded-full border border-blue-200">
-                    {feature.status}
-                  </span>
-                </div>
-                <p className="text-gray-600 mb-6 leading-relaxed">{feature.description}</p>
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                  <p className="text-blue-800 text-sm font-medium">
-                    🔧 Currently in development
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Link 
-              href="/products" 
-              className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold text-lg group"
-            >
-              Learn More About Our Products
-              <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-            </Link>
+          
+          <div className="space-y-12">
+            <div className="border-l-2 border-bronze pl-8">
+              <p className="text-stone leading-relaxed text-lg">
+                Reduced a 12-week strategic evaluation to 48 hours, enabling rapid capital allocation.
+              </p>
+            </div>
+            <div className="border-l-2 border-bronze pl-8">
+              <p className="text-stone leading-relaxed text-lg">
+                Identified market misalignment that prevented a £2.4M product misinvestment.
+              </p>
+            </div>
+            <div className="border-l-2 border-bronze pl-8">
+              <p className="text-stone leading-relaxed text-lg">
+                Revealed acquisition timing advantage that accelerated entry into a competitive sector.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA SECTION */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6">Ready to Experience Strategic Intelligence?</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Join our early access programme and be among the first to access these powerful strategic intelligence tools.
+      {/* REQUEST A STRATEGIC BRIEFING */}
+      <section className="gotham-hq py-32">
+        <div className="max-w-5xl mx-auto px-8 text-center">
+          <p className="font-serif text-2xl mb-16 text-stone">
+            If the problem matters, clarity is not optional.
           </p>
-          <Link 
-            href="/early-access" 
-            className="bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors duration-300 font-semibold text-lg shadow-lg"
+          
+          <button 
+            onClick={() => setShowModal(true)}
+            className="btn-strategic px-12 py-4 text-base tracking-wide"
           >
-            Join Early Access Programme
-          </Link>
+            Request a Strategic Briefing
+          </button>
         </div>
       </section>
     </Layout>
