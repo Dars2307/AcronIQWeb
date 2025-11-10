@@ -51,14 +51,12 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <a
-              href="https://portal.acroniq.co.uk"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary"
+            <Link
+              href="/contact"
+              className="btn-secondary border-2 border-gray-300 text-gray-600 hover:border-gray-400 hover:text-gray-700 relative"
             >
-              Access Portal
-            </a>
+              Portal (Coming Soon)
+            </Link>
           </div>
 
           <button
@@ -81,14 +79,12 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <a
-              href="https://portal.acroniq.co.uk"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block mt-2 btn-primary text-center"
+            <Link
+              href="/contact"
+              className="block mt-2 btn-secondary border-2 border-gray-300 text-gray-600 hover:border-gray-400 hover:text-gray-700 text-center"
             >
-              Access Portal
-            </a>
+              Portal (Coming Soon)
+            </Link>
           </div>
         )}
       </div>

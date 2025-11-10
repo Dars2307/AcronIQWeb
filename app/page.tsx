@@ -73,15 +73,13 @@ export default function Home() {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <a
-              href="https://portal.acroniq.co.uk"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary text-lg"
+            <Link
+              href="/contact"
+              className="btn-secondary text-lg bg-white text-navy border-2 border-white hover:bg-gray-100 hover:text-navy hover:shadow-lg transition-all duration-300"
             >
               <FaRocket className="inline mr-2" />
-              Access Portal
-            </a>
+              Portal Coming Soon
+            </Link>
             <Link href="/contact" className="btn-secondary text-lg bg-transparent text-white border-2 border-white hover:bg-white hover:text-navy hover:shadow-lg transition-all duration-300">
               Contact Us
             </Link>
@@ -125,8 +123,11 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-navy mb-4">Our Products</h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto mb-2">
               Cutting-edge AI tools designed to transform your business intelligence
+            </p>
+            <p className="text-orange-600 font-medium">
+              All products are currently in development - coming soon!
             </p>
           </motion.div>
 
@@ -141,8 +142,18 @@ export default function Home() {
                 className="card text-center hover:scale-105"
               >
                 <div className="flex justify-center mb-4">{feature.icon}</div>
-                <h3 className="text-2xl font-bold text-navy mb-3">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <div className="flex items-center justify-center gap-2 mb-3">
+                  <h3 className="text-2xl font-bold text-navy">{feature.title}</h3>
+                  <span className="px-2 py-1 bg-orange-100 text-orange-800 text-xs font-semibold rounded-full border border-orange-200">
+                    Coming Soon
+                  </span>
+                </div>
+                <p className="text-gray-600 mb-4">{feature.description}</p>
+                <div className="bg-orange-50 border border-orange-200 rounded-lg p-3">
+                  <p className="text-orange-800 text-sm font-medium">
+                    🚧 Currently in development
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -153,8 +164,8 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mt-12"
           >
-            <Link href="/products" className="btn-primary">
-              Explore All Products
+            <Link href="/products" className="btn-secondary border-2 border-gray-300 text-gray-600 hover:border-gray-400 hover:text-gray-700">
+              Learn More About Our Products
             </Link>
           </motion.div>
         </div>

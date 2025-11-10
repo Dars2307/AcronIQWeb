@@ -82,11 +82,21 @@ export default function Products() {
               >
                 <div className={index % 2 === 1 ? "lg:order-2" : ""}>
                   <div className="mb-6">{product.icon}</div>
-                  <h2 className="text-4xl font-bold text-navy mb-2">{product.title}</h2>
+                  <div className="flex items-center gap-3 mb-4">
+                    <h2 className="text-4xl font-bold text-navy">{product.title}</h2>
+                    <span className="px-3 py-1 bg-orange-100 text-orange-800 text-sm font-semibold rounded-full border border-orange-200">
+                      Coming Soon
+                    </span>
+                  </div>
                   <p className="text-xl text-blue-600 mb-6">{product.subtitle}</p>
-                  <p className="text-gray-600 text-lg mb-6">{product.description}</p>
-                  <Link href="/contact" className="btn-primary inline-flex items-center group">
-                    Learn More
+                  <p className="text-gray-600 text-lg mb-4">{product.description}</p>
+                  <div className="bg-orange-50 border border-orange-200 rounded-lg p-4 mb-6">
+                    <p className="text-orange-800 font-medium">
+                      🚧 This product is currently in development. Stay tuned for updates!
+                    </p>
+                  </div>
+                  <Link href="/contact" className="btn-secondary inline-flex items-center group border-2 border-gray-300 text-gray-600 hover:border-gray-400 hover:text-gray-700">
+                    Get Notified When Available
                     <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
@@ -129,12 +139,12 @@ export default function Products() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-6">Ready to Get Started?</h2>
+            <h2 className="text-4xl font-bold mb-6">Interested in Early Access?</h2>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              Transform your business with AI-powered intelligence. Contact us to learn how our products can help you achieve your goals.
+              Our AI-powered products are currently in development. Contact us to join our early access programme and be the first to experience these innovative solutions.
             </p>
             <Link href="/contact" className="btn-secondary bg-white text-blue-600 border-white hover:bg-blue-50">
-              Contact Us Today
+              Join Early Access Programme
             </Link>
           </motion.div>
         </div>
