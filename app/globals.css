@@ -5,20 +5,8 @@
 
 @layer base {
   html, body {
-    background-color: #111213;
-    color: #ffffff;
     font-family: Inter, sans-serif;
     letter-spacing: 0.01em;
-  }
-
-  /* Remove all hover animations - Strategic Surgeon stillness */
-  * {
-    transition: none !important;
-  }
-
-  /* No rounded corners anywhere - precision aesthetic */
-  * {
-    border-radius: 0 !important;
   }
 
   /* Remove link underlines unless intentional */

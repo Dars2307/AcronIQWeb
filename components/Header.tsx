@@ -1,20 +1,87 @@
+"use client";
+
+import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
+import { HiMenu, HiX } from "react-icons/hi";
 
 export function Header() {
-  return (
-    <header className="w-full bg-charcoal border-b-thin border-bronze">
-      <div className="max-w-6xl mx-auto flex items-center gap-4 px-8 py-6">
-        <Image
-          src="/brand/acroniq-seal.svg"
-          alt="AcronIQ Strategic Intelligence Seal"
-          width={40}
-          height={44}
-          className="select-none pointer-events-none"
-        />
+  const [isOpen, setIsOpen] = useState(false);
 
-        <span className="font-serif text-bronze tracking-tight text-sm uppercase select-none">
-          ACRONIQ
-        </span>
+  const navLinks = [
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/products", label: "Products" },
+    { href: "/journal", label: "Journal" },
+    { href: "/roadmap", label: "Roadmap" },
+    { href: "/contact", label: "Contact" },
+  ];
+
+  return (
+    <header className="w-full bg-white border-b border-gray-200 sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-3">
+            <Image
+              src="/images/AcronIQ-Primary-Logo.png"
+              alt="AcronIQ Research Logo"
+              width={100}
+              height={50}
+              className="object-contain"
+            />
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <Link
+              href="/early-access"
+              className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium"
+            >
+              Early Access
+            </Link>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden text-gray-700 hover:text-blue-600"
+          >
+            {isOpen ? <HiX size={24} /> : <HiMenu size={24} />}
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <div className="md:hidden pb-4 border-t border-gray-100 mt-2 pt-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="block py-2 text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+                onClick={() => setIsOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <Link
+              href="/early-access"
+              className="block mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium text-center"
+              onClick={() => setIsOpen(false)}
+            >
+              Early Access
+            </Link>
+          </div>
+        )}
       </div>
     </header>
   );
