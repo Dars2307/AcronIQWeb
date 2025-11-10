@@ -32,15 +32,14 @@ export default function Navbar() {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center">
             <Image 
               src="/images/AcronIQ-Primary-Logo.png" 
               alt="AcronIQ Research Logo" 
-              width={48} 
-              height={48}
+              width={120} 
+              height={60}
               className="object-contain"
             />
-            <span className="font-bold text-xl text-navy">AcronIQ</span>
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">

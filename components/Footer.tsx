@@ -8,15 +8,14 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <Link href="/" className="flex items-center space-x-2 mb-4">
+            <Link href="/" className="flex items-center mb-4">
               <Image 
                 src="/images/AcronIQ-Primary-Logo.png" 
                 alt="AcronIQ Research Logo" 
-                width={40} 
-                height={40}
+                width={100} 
+                height={50}
                 className="object-contain"
               />
-              <span className="font-bold text-xl">AcronIQ Research</span>
             </Link>
             <p className="text-gray-300">
               Transforming Ideas into Intelligent Solutions
