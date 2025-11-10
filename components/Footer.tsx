@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
 
 export default function Footer() {
@@ -7,12 +8,16 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 via-blue-500 to-blue-400 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">Q</span>
-              </div>
+            <Link href="/" className="flex items-center space-x-2 mb-4">
+              <Image 
+                src="/images/original/Acron first logo transparent.png" 
+                alt="AcronIQ Research Logo" 
+                width={40} 
+                height={40}
+                className="object-contain"
+              />
               <span className="font-bold text-xl">AcronIQ Research</span>
-            </div>
+            </Link>
             <p className="text-gray-300">
               Transforming Ideas into Intelligent Solutions
             </p>
@@ -29,6 +34,21 @@ export default function Footer() {
               <li>
                 <Link href="/products" className="text-gray-300 hover:text-blue-400 transition-colors">
                   Products
+                </Link>
+              </li>
+              <li>
+                <Link href="/journal" className="text-gray-300 hover:text-blue-400 transition-colors">
+                  Journal
+                </Link>
+              </li>
+              <li>
+                <Link href="/roadmap" className="text-gray-300 hover:text-blue-400 transition-colors">
+                  Roadmap
+                </Link>
+              </li>
+              <li>
+                <Link href="/early-access" className="text-gray-300 hover:text-blue-400 transition-colors">
+                  Early Access
                 </Link>
               </li>
               <li>
