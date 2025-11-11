@@ -30,9 +30,9 @@ export function Header() {
               <Image
                 src="/images/AcronIQ-Primary-Logo.png"
                 alt="AcronIQ Research Logo"
-                width={100}
-                height={50}
-                className="object-contain"
+                width={140}
+                height={40}
+                className="object-contain max-h-10"
               />
             </Link>
 

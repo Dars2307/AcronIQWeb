@@ -77,7 +77,7 @@ export default function Home() {
               className="btn-secondary text-lg bg-white text-navy border-2 border-white hover:bg-gray-100 hover:text-navy hover:shadow-lg transition-all duration-300"
             >
               <FaRocket className="inline mr-2" />
-              Portal Coming Soon
+              Early Access
             </Link>
             <Link href="/contact" className="btn-secondary text-lg bg-transparent text-white border-2 border-white hover:bg-white hover:text-navy hover:shadow-lg transition-all duration-300">
               Contact Us
