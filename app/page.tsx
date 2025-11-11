@@ -16,8 +16,8 @@ export default function Home() {
   const features = [
     {
       icon: <FaBrain className="text-4xl text-blue-600" />,
-      title: "TrueNorth",
-      description: "AI strategist & business validator to guide your decisions with precision.",
+      title: "AcronIQ Veritus",
+      description: "Intelligence With Purpose — powered by Polaris Intelligence Core (PIC).",
     },
     {
       icon: <FaChartLine className="text-4xl text-blue-600" />,

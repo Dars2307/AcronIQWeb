@@ -9,15 +9,15 @@ export default function Products() {
   const products = [
     {
       icon: <FaBrain className="text-6xl text-blue-600" />,
-      title: "TrueNorth",
-      subtitle: "AI Strategist & Business Validator",
-      description: "TrueNorth is your intelligent strategy partner, powered by advanced AI to validate business ideas, analyze market fit, and provide actionable insights. Make confident decisions backed by data-driven intelligence.",
+      title: "AcronIQ Veritus",
+      subtitle: "Intelligence With Purpose",
+      description: "AcronIQ Veritus is powered by Polaris Intelligence Core (PIC), delivering strategic intelligence with purpose. Validate business ideas, analyze market fit, and receive actionable insights backed by advanced AI reasoning.",
       features: [
+        "Powered by PIC (Polaris Intelligence Core)",
         "Business idea validation",
-        "Market fit analysis",
-        "Competitive intelligence",
-        "Strategic recommendations",
-        "Risk assessment",
+        "Market fit analysis", 
+        "Strategic intelligence delivery",
+        "Purpose-driven insights",
       ],
     },
     {

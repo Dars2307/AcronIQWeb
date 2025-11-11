@@ -10,7 +10,7 @@ export default function EarlyAccess() {
   const benefits = [
     {
       title: "Priority Access to Beta Products",
-      description: "Be amongst the first to experience TrueNorth and other AcronIQ intelligence tools."
+      description: "Be amongst the first to experience AcronIQ Veritus and other AcronIQ intelligence tools."
     },
     {
       title: "Strategic Research Updates", 
@@ -37,16 +37,16 @@ export default function EarlyAccess() {
           <h1 className="text-5xl md:text-6xl font-bold mb-8 text-gray-900">
             Early Access to{" "}
             <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 bg-clip-text text-transparent">
-              TrueNorth
+              AcronIQ Veritus
             </span>
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-600 mb-6 max-w-4xl mx-auto leading-relaxed">
-            For founders, operators, investors, analysts, planners, and strategists.
+            Intelligence With Purpose — powered by Polaris Intelligence Core (PIC).
           </p>
 
           <p className="text-lg text-gray-500 mb-12 max-w-3xl mx-auto">
-            TrueNorth is currently in private development. Joining the waitlist grants priority access 
+            AcronIQ Veritus is currently in private development. Joining the waitlist grants priority access 
             to beta products, strategic research updates, and the opportunity to influence product direction.
           </p>
 
