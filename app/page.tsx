@@ -10,7 +10,7 @@ export default function Home() {
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
+    transition: { duration: 0.4 }
   };
 
   const features = [
@@ -35,9 +35,9 @@ export default function Home() {
   return (
     <Layout>
       <section className="relative min-h-screen pb-32 flex items-center justify-center bg-gradient-to-br from-navy via-navy-light to-blue-900 text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-blue-600 via-blue-500 to-blue-400 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-blue-500 to-blue-300 rounded-full blur-3xl" />
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-gradient-to-br from-blue-600 to-blue-400 rounded-full blur-2xl" />
+          <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-gradient-to-br from-blue-500 to-blue-300 rounded-full blur-2xl" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">

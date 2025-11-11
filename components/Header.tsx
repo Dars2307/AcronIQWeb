@@ -24,15 +24,15 @@ export function Header() {
       <EarlyAccessModal open={showModal} onClose={() => setShowModal(false)} />
       <header className="w-full bg-white border-b border-gray-200 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center">
               <Image
                 src="/images/AcronIQ-Primary-Logo.png"
                 alt="AcronIQ Research Logo"
-                width={140}
-                height={40}
-                className="object-contain max-h-10"
+                width={180}
+                height={50}
+                className="object-contain max-h-12"
               />
             </Link>
 
