@@ -1,51 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&display=swap');
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;610;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0A1931;
+  --color-navy-dark: #050D1A;
+  --color-navy-light: #1A2F4A;
+  
+  --font-sans: Inter, Poppins, system-ui, sans-serif;
+}
 
 @layer base {
-  html, body {
-    font-family: Inter, sans-serif;
-    letter-spacing: 0.01em;
-  }
-
-  /* Remove link underlines unless intentional */
-  a {
-    text-decoration: none;
+  body {
+    @apply bg-white text-gray-900 font-sans antialiased;
   }
 }
 
 @layer components {
-  /* Professional blue button styling */
-  .btn-strategic {
-    border: 1px solid #3b82f6;
-    color: #3b82f6;
-    padding: 0.75rem 1.5rem;
-    font-weight: 500;
-    letter-spacing: 0.025em;
-    font-size: 0.875rem;
-    transition: background-color 0.2s, color 0.2s;
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400 bg-clip-text text-transparent;
   }
   
-  .btn-strategic:hover {
-    background-color: #3b82f6;
-    color: #ffffff;
+  .gradient-bg {
+    @apply bg-gradient-to-br from-blue-600 via-blue-500 to-blue-400;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-white text-navy border-2 border-navy font-semibold rounded-lg hover:bg-navy hover:text-white transition-all duration-300;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 border border-gray-100;
   }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
-  }
-  
-  /* Ensure gradient text works properly */
-  .bg-clip-text {
-    -webkit-background-clip: text;
-    background-clip: text;
-  }
-  
-  .text-transparent {
-    -webkit-text-fill-color: transparent;
-    color: transparent;
   }
 }
