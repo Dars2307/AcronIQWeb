@@ -35,7 +35,7 @@ export default function Home() {
       <EarlyAccessModal open={showModal} onClose={() => setShowModal(false)} />
       
       {/* HERO SECTION - Original Design */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white">
+      <section className="relative min-h-screen flex items-center justify-center bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
             Transforming Ideas into{" "}
