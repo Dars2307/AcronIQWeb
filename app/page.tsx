@@ -26,7 +26,7 @@ export default function Home() {
     },
     {
       icon: <FaShieldAlt className="text-4xl text-blue-600" />,
-      title: "NexusOne Portal",
+      title: "AcronIQ Portal",
       description: "Secure client workspace for seamless collaboration and insights.",
     },
   ];

@@ -31,9 +31,9 @@ export default function Terms() {
                 AcronIQ Research provides AI-powered intelligence and research services including but not limited to:
               </p>
               <ul className="list-disc pl-6 space-y-2">
-                <li>TrueNorth - AI strategist and business validator</li>
+                <li>AcronIQ Veritus - Intelligence With Purpose</li>
                 <li>AcronIQ Signals - Market intelligence and trend detection</li>
-                <li>NexusOne Portal - Secure client workspace</li>
+                <li>AcronIQ Portal - Secure client workspace</li>
               </ul>
             </section>
 

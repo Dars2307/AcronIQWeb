@@ -7,7 +7,7 @@ import { FaCog, FaRocket, FaShieldAlt, FaChartLine, FaNetworkWired } from "react
 export default function Roadmap() {
   const phases = [
     {
-      phase: "Phase 1: Internal Research Engine (TrueNorth Core)",
+      phase: "Phase 1: Internal Research Engine (AcronIQ Veritus Core)",
       status: "In Progress",
       statusColor: "bg-blue-500",
       focus: "Data-driven research workflows",

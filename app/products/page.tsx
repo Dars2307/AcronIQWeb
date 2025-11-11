@@ -35,9 +35,9 @@ export default function Products() {
     },
     {
       icon: <FaShieldAlt className="text-6xl text-blue-600" />,
-      title: "NexusOne Portal",
+      title: "AcronIQ Portal",
       subtitle: "Secure Client Workspace",
-      description: "NexusOne Portal is your centralized hub for collaboration and insights. Access all your research, reports, and analytics in one secure, intuitive platform designed for seamless workflow.",
+      description: "AcronIQ Portal is your centralized hub for collaboration and insights. Access all your research, reports, and analytics in one secure, intuitive platform designed for seamless workflow.",
       features: [
         "Secure data access",
         "Real-time collaboration",

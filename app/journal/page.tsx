@@ -8,7 +8,7 @@ export default function Journal() {
   const entries = [
     {
       date: "10 November 2025",
-      focus: "TrueNorth Core Engine",
+      focus: "AcronIQ Veritus Core Engine",
       icon: <FaCode className="text-2xl text-blue-400" />,
       summary: "We finalised the baseline research pipeline structure:",
       details: [
@@ -32,7 +32,7 @@ export default function Journal() {
         "Established development workflow and version control standards"
       ],
       next: [
-        "Begin TrueNorth core engine development",
+        "Begin AcronIQ Veritus core engine development",
         "Design initial database schema for research workflows"
       ]
     }
@@ -58,7 +58,7 @@ export default function Journal() {
             </p>
             <p className="text-lg text-gray-400 max-w-3xl mx-auto mt-4 leading-relaxed">
               This journal documents our strategic decisions, research progress, and system architecture milestones 
-              as we shape the intelligence infrastructure behind TrueNorth and the AcronIQ ecosystem.
+              as we shape the intelligence infrastructure behind AcronIQ Veritus and the AcronIQ ecosystem.
             </p>
             <p className="text-lg text-blue-400 font-medium mt-6">
               Expect clarity. Expect detail. Expect precision.
