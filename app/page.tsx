@@ -120,19 +120,19 @@ export default function Home() {
             transition={{ delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <button
-              onClick={() => setShowEarlyAccess(true)}
-              className="px-8 py-4 bg-white text-navy font-bold text-lg rounded-lg hover:bg-blue-50 hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
-            >
-              <FaRocket className="inline mr-2" />
-              Join the Early Access Programme
-            </button>
             <Link 
               href="/contact" 
-              className="px-8 py-4 bg-transparent text-white font-semibold text-lg rounded-lg border-2 border-white hover:bg-white hover:text-navy transition-all duration-300"
+              className="px-8 py-4 bg-white text-navy font-bold text-lg rounded-lg hover:bg-blue-50 hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
             >
               Contact Us
             </Link>
+            <button
+              onClick={() => setShowEarlyAccess(true)}
+              className="px-8 py-4 bg-transparent text-white font-semibold text-lg rounded-lg border-2 border-white hover:bg-white hover:text-navy transition-all duration-300"
+            >
+              <FaRocket className="inline mr-2" />
+              Join Early Access
+            </button>
           </motion.div>
         </div>
       </section>

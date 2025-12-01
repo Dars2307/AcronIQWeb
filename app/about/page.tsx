@@ -97,6 +97,9 @@ export default function About() {
               <p className="text-lg text-gray-600 mb-6 leading-relaxed">
                 AcronIQ exists to serve founders, executives, and strategic leaders who refuse to navigate by guesswork. We believe in precision over noise, trust over hype, and intelligence that resonates.
               </p>
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                AcronIQ is being built not as a temporary solution, but as a long-term intelligence partner for leaders shaping the next decades.
+              </p>
               <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg">
                 <p className="text-gray-700 italic">
                   "AcronIQ helped us see clarity in chaos. Their advisory transformed how we approach strategic decisions."

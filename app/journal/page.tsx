@@ -1,16 +1,80 @@
 "use client";
 
+import { useState } from "react";
 import Layout from "@/components/Layout";
+import EarlyAccessModal from "@/components/EarlyAccessModal";
 import { motion } from "framer-motion";
 import { FaCode, FaDatabase, FaChartLine, FaCog } from "react-icons/fa";
 
 export default function Journal() {
+  const [showEarlyAccess, setShowEarlyAccess] = useState(false);
   const entries = [
     {
-      date: "Coming Soon",
-      focus: "Why Emotional Intelligence Matters in AI Advisory",
+      date: "December 2025",
+      focus: "Why Clarity Matters More Than Information in Strategic Decision-Making",
+      author: "Joel Ogunniyi – Founder & CEO, AcronIQ Research",
       icon: <FaCode className="text-2xl text-blue-400" />,
-      summary: "Exploring the intersection of human insight and artificial intelligence in strategic decision-making.",
+      summary: "In today's world, leaders aren't suffering from a lack of information — they're drowning in it. Every decision is surrounded by metrics, dashboards, forecasts, and AI-generated insight. Yet decisions still fail. Not because leaders didn't know enough, but because they couldn't see clearly.",
+      fullArticle: `Clarity, not volume of data, is what defines advantage in high-stakes decision-making.
+
+When complexity rises, the instinct is often to search for more data, more reports, more validation. But data without clarity only creates hesitation. It delays decisions until timing is lost or forces action rooted in fear rather than foresight.
+
+**At AcronIQ, we believe strategic clarity is created through three core principles:**
+
+**1. Precision over noise**
+
+Insight must filter — not amplify — complexity. Useful intelligence answers: What truly matters here?
+
+**2. Trust over uncertainty**
+
+Leadership relies not only on numbers but aligned confidence. Insight should reinforce conviction, not increase anxiety.
+
+**3. Intelligence that resonates**
+
+Human context is essential. The best decisions are not just mathematically correct — they are strategically and emotionally aligned.
+
+The future of leadership will not belong to those with the most information, but those who master the art of seeing clearly before acting decisively.
+
+**AcronIQ was built for that future.**`,
+      details: [
+        "Why more data often leads to less clarity",
+        "The difference between information and intelligence",
+        "How strategic leaders cut through complexity",
+        "Building decision frameworks that prioritize what matters"
+      ],
+      next: []
+    },
+    {
+      date: "December 2025",
+      focus: "Why Emotional Intelligence Matters in AI Advisory",
+      author: "Joel Ogunniyi – Founder & CEO, AcronIQ Research",
+      icon: <FaDatabase className="text-2xl text-green-400" />,
+      summary: "We often think of AI advisory as a discipline of logic, data and precision. But decisions that shape organisations are rarely made in perfect conditions. They're made under pressure — influenced by uncertainty, human perception, and emotional bias.",
+      fullArticle: `That's why intelligence without emotional understanding is incomplete.
+
+Executives don't struggle because they lack access to forecasting models. They struggle because instinct, fear, team dynamics or political pressure distort how information is received and acted on. Insight is only powerful if it resonates with the human who must execute it.
+
+**Where emotional intelligence changes AI advisory**
+
+**1. Translating insight into leadership action**
+
+AI can highlight risks, but only emotional intelligence can guide how to deliver that insight in a way that drives action instead of resistance.
+
+**2. Reducing fear-based decision patterns**
+
+In high-stakes decisions, leaders often react to what feels safe, not what is strategically sound. A truly intelligent advisory system must recognise and account for fear-driven choices.
+
+**3. Navigating executive dynamics**
+
+Strategies don't fail during analysis — they fail in boardroom conversations. Understanding influence, alignment and leadership behaviour is essential to making AI-driven insights truly effective.
+
+**The next evolution of strategic intelligence**
+
+Artificial intelligence provides depth. Emotional intelligence provides direction. Real strategic advisory requires both.
+
+At AcronIQ, we're designing intelligence systems that don't just give answers — they give leaders clarity that speaks to both reason and conviction.
+
+**Because in high-stakes environments, the decision that is mathematically correct is irrelevant if it cannot be confidently executed.**`,
       details: [
         "How emotional intelligence enhances AI-driven advisory",
         "The role of trust and empathy in high-stakes decisions",
@@ -22,7 +86,7 @@ export default function Journal() {
     {
       date: "Coming Soon",
       focus: "Navigating Complexity: A Framework for Founders",
-      icon: <FaDatabase className="text-2xl text-green-400" />,
+      icon: <FaChartLine className="text-2xl text-purple-400" />,
       summary: "How to transform uncertainty into actionable strategy using intelligence-driven approaches.",
       details: [
         "Understanding complexity vs. complication in business",
@@ -35,7 +99,7 @@ export default function Journal() {
     {
       date: "Coming Soon",
       focus: "The Future of Strategic Intelligence",
-      icon: <FaChartLine className="text-2xl text-purple-400" />,
+      icon: <FaDatabase className="text-2xl text-green-400" />,
       summary: "What modular AI tools mean for the next generation of business leaders.",
       details: [
         "Evolution from traditional consulting to AI-augmented advisory",
@@ -95,7 +159,10 @@ export default function Journal() {
                       {entry.icon}
                       <div>
                         <h2 className="text-2xl font-bold">{entry.focus}</h2>
-                        <p className="text-gray-400 text-sm font-mono">{entry.date}</p>
+                        {entry.author && (
+                          <p className="text-blue-300 text-sm mt-1">{entry.author}</p>
+                        )}
+                        <p className="text-gray-400 text-sm font-mono mt-1">{entry.date}</p>
                       </div>
                     </div>
                   </div>
@@ -104,22 +171,57 @@ export default function Journal() {
                 <div className="p-6">
                   <div className="mb-6">
                     <p className="text-gray-700 text-lg mb-4 leading-relaxed">{entry.summary}</p>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-3">Key Topics</h3>
-                    <ul className="space-y-2">
-                      {entry.details.map((detail, idx) => (
-                        <li key={idx} className="flex items-start">
-                          <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                          <span className="text-gray-700">{detail}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    
+                    {entry.fullArticle ? (
+                      <div className="prose prose-lg max-w-none">
+                        {entry.fullArticle.split('\n\n').map((paragraph, idx) => (
+                          <p key={idx} className="text-gray-700 mb-4 leading-relaxed">
+                            {paragraph.startsWith('**') ? (
+                              <strong className="text-navy">{paragraph.replace(/\*\*/g, '')}</strong>
+                            ) : paragraph.match(/^\d+\./) ? (
+                              <span className="block ml-4">{paragraph}</span>
+                            ) : (
+                              paragraph
+                            )}
+                          </p>
+                        ))}
+                      </div>
+                    ) : (
+                      <>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-3">Key Topics</h3>
+                        <ul className="space-y-2">
+                          {entry.details.map((detail, idx) => (
+                            <li key={idx} className="flex items-start">
+                              <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                              <span className="text-gray-700">{detail}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </>
+                    )}
                   </div>
                   
-                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                    <p className="text-blue-800 font-medium text-center">
-                      📝 Article in development — stay tuned for publication
-                    </p>
-                  </div>
+                  {entry.fullArticle ? (
+                    <div className="bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200 rounded-lg p-6 mt-6">
+                      <p className="text-navy font-semibold text-lg mb-3 text-center">
+                        🧭 If you'd like early access to tools that turn complexity into clarity, we invite you to join our Early Access Programme.
+                      </p>
+                      <div className="text-center">
+                        <button
+                          onClick={() => setShowEarlyAccess(true)}
+                          className="px-8 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                        >
+                          Request Early Access
+                        </button>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                      <p className="text-blue-800 font-medium text-center">
+                        📝 Article in development — stay tuned for publication
+                      </p>
+                    </div>
+                  )}
                 </div>
               </motion.article>
             ))}
@@ -145,6 +247,12 @@ export default function Journal() {
           </motion.div>
         </div>
       </section>
+
+      {/* Early Access Modal */}
+      <EarlyAccessModal 
+        open={showEarlyAccess} 
+        onClose={() => setShowEarlyAccess(false)} 
+      />
     </Layout>
   );
 }
