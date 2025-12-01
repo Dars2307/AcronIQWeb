@@ -11,9 +11,18 @@ export default function Journal() {
   const entries = [
     {
       date: "December 2025",
+      series: "Strategic Clarity Series",
       focus: "Why Clarity Matters More Than Information in Strategic Decision-Making",
-      author: "Joel Ogunniyi – Founder & CEO, AcronIQ Research",
+      author: "Joel Ogunniyi",
+      authorTitle: "Founder & CEO, AcronIQ Research",
+      authorCredentials: "Strategic Advisor specialising in AI-driven decision systems",
       icon: <FaCode className="text-2xl text-blue-400" />,
+      keyTakeaways: [
+        "Leaders fail due to clarity issues, not data scarcity",
+        "Data without clarity creates hesitation and fear-based decisions",
+        "Strategic clarity requires precision, trust, and emotional alignment",
+        "Future leadership belongs to those who see clearly before acting"
+      ],
       summary: "In today's world, leaders aren't suffering from a lack of information — they're drowning in it. Every decision is surrounded by metrics, dashboards, forecasts, and AI-generated insight. Yet decisions still fail. Not because leaders didn't know enough, but because they couldn't see clearly.",
       fullArticle: `Clarity, not volume of data, is what defines advantage in high-stakes decision-making.
 
@@ -46,9 +55,18 @@ The future of leadership will not belong to those with the most information, but
     },
     {
       date: "December 2025",
+      series: "Strategic Clarity Series",
       focus: "Why Emotional Intelligence Matters in AI Advisory",
-      author: "Joel Ogunniyi – Founder & CEO, AcronIQ Research",
+      author: "Joel Ogunniyi",
+      authorTitle: "Founder & CEO, AcronIQ Research",
+      authorCredentials: "Strategic Advisor specialising in AI-driven decision systems",
       icon: <FaDatabase className="text-2xl text-green-400" />,
+      keyTakeaways: [
+        "Advisory must factor emotional influence in AI decisions",
+        "Executives struggle with fear, team dynamics, and political pressure",
+        "AI provides depth; emotional intelligence provides direction",
+        "Mathematically correct decisions fail if they can't be confidently executed"
+      ],
       summary: "We often think of AI advisory as a discipline of logic, data and precision. But decisions that shape organisations are rarely made in perfect conditions. They're made under pressure — influenced by uncertainty, human perception, and emotional bias.",
       fullArticle: `That's why intelligence without emotional understanding is incomplete.
 
@@ -85,6 +103,7 @@ At AcronIQ, we're designing intelligence systems that don't just give answers �
     },
     {
       date: "Coming Soon",
+      nextInsightDays: 14,
       focus: "Navigating Complexity: A Framework for Founders",
       icon: <FaChartLine className="text-2xl text-purple-400" />,
       summary: "How to transform uncertainty into actionable strategy using intelligence-driven approaches.",
@@ -133,6 +152,19 @@ At AcronIQ, we're designing intelligence systems that don't just give answers �
               Exploring the intersection of artificial intelligence, strategic decision-making, and the evolving landscape 
               of business intelligence. We share insights on navigating complexity, building with precision, and leading in the age of AI.
             </p>
+            
+            {/* Publishing Cadence */}
+            <div className="mt-8 max-w-2xl mx-auto">
+              <div className="bg-blue-900/30 border border-blue-500/30 rounded-lg p-4">
+                <p className="text-blue-300 text-sm font-semibold mb-1">
+                  📅 Publishing Cycle: New insights released every 2–3 weeks
+                </p>
+                <p className="text-blue-400 text-sm">
+                  Part of the AcronIQ Strategic Intelligence Series 2025
+                </p>
+              </div>
+            </div>
+            
             <p className="text-lg text-blue-400 font-medium mt-6">
               Clarity. Precision. Intelligence that resonates.
             </p>
@@ -147,22 +179,41 @@ At AcronIQ, we're designing intelligence systems that don't just give answers �
             {entries.map((entry, index) => (
               <motion.article
                 key={entry.focus}
+                id={`article-${index}`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
+                transition={{ delay: index * 0.04, duration: 0.5 }}
                 className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden"
               >
                 <div className="bg-gray-900 text-white p-6">
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center space-x-3">
                       {entry.icon}
-                      <div>
-                        <h2 className="text-2xl font-bold">{entry.focus}</h2>
+                      <div className="flex-1">
+                        <h2 className="text-2xl font-bold mb-2">{entry.focus}</h2>
                         {entry.author && (
-                          <p className="text-blue-300 text-sm mt-1">{entry.author}</p>
+                          <div className="space-y-1">
+                            <p className="text-blue-300 font-semibold">{entry.author}</p>
+                            <p className="text-blue-200 text-sm">{entry.authorTitle}</p>
+                            {entry.authorCredentials && (
+                              <p className="text-gray-400 text-sm italic">{entry.authorCredentials}</p>
+                            )}
+                          </div>
                         )}
-                        <p className="text-gray-400 text-sm font-mono mt-1">{entry.date}</p>
+                        <div className="flex items-center gap-3 mt-2 flex-wrap">
+                          <p className="text-gray-400 text-sm font-mono">{entry.date}</p>
+                          {entry.series && (
+                            <span className="px-2 py-1 bg-blue-600 text-white text-xs font-semibold rounded">
+                              {entry.series}
+                            </span>
+                          )}
+                          {entry.nextInsightDays && (
+                            <span className="px-3 py-1 bg-orange-500 text-white text-xs font-semibold rounded-full animate-pulse">
+                              📅 Next Insight Drops in {entry.nextInsightDays} Days
+                            </span>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -170,7 +221,33 @@ At AcronIQ, we're designing intelligence systems that don't just give answers �
                 
                 <div className="p-6">
                   <div className="mb-6">
-                    <p className="text-gray-700 text-lg mb-4 leading-relaxed">{entry.summary}</p>
+                    <p className="text-gray-700 text-lg mb-6 leading-relaxed">{entry.summary}</p>
+                    
+                    {/* Key Takeaways Box */}
+                    {entry.keyTakeaways && entry.keyTakeaways.length > 0 && (
+                      <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-6 mb-6">
+                        <h3 className="text-lg font-bold text-navy mb-4 flex items-center">
+                          <span className="text-2xl mr-2">📌</span>
+                          Key Takeaways (for execs in a hurry)
+                        </h3>
+                        <ul className="space-y-2 mb-4">
+                          {entry.keyTakeaways.map((takeaway, idx) => (
+                            <li key={idx} className="flex items-start">
+                              <span className="text-blue-600 mr-2 font-bold">•</span>
+                              <span className="text-gray-800 leading-relaxed">{takeaway}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        {entry.fullArticle && (
+                          <a 
+                            href={`#article-${index}`}
+                            className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors"
+                          >
+                            Read the full article →
+                          </a>
+                        )}
+                      </div>
+                    )}
                     
                     {entry.fullArticle ? (
                       <div className="prose prose-lg max-w-none">
