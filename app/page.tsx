@@ -68,9 +68,9 @@ export default function Home() {
   ];
 
   const roadmapMilestones = [
-    { quarter: "Q1 2025", title: "Early Access Launch", status: "active" },
-    { quarter: "Q2 2025", title: "Signals Platform Beta", status: "upcoming" },
-    { quarter: "Q3 2025", title: "Advisory Expansion", status: "upcoming" }
+    { quarter: "Q4 2025", title: "AcronIQ Veritus Core", status: "active" },
+    { quarter: "Q1 2026", title: "£199 Lean Report Product", status: "upcoming" },
+    { quarter: "Q2 2026", title: "AcronIQ Portal", status: "upcoming" }
   ];
 
   return (
@@ -277,10 +277,10 @@ export default function Home() {
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Why AcronIQ Exists</h2>
               <p className="text-xl text-blue-100 mb-6 leading-relaxed text-center italic">
-                "I founded AcronIQ because leaders deserve clarity, even when the world is at its most complex. In an age drowning in data, I believe the ultimate competitive advantage isn't more information—it's precision, trust, and intelligence that resonates."
+                "I founded AcronIQ because leaders deserve clarity, even when the world is at its most complex. In an age flooded with data, the true competitive advantage isn't more information—it's precision, trust, and intelligence that resonates."
               </p>
               <p className="text-lg text-blue-200 mb-8 text-center">
-                — Joel Ogunniyi, Founder & Chief Intelligence Officer
+                — Joel Ogunniyi, Founder & Chief Executive Officer
               </p>
               <div className="text-center">
                 <Link
@@ -314,18 +314,18 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
+                title: "Why Clarity Matters More Than Information in Strategic Decision-Making",
+                excerpt: "In today's world, leaders aren't suffering from a lack of information — they're drowning in it. Clarity, not volume of data, is what defines advantage.",
+                date: "December 2025"
+              },
+              {
                 title: "Why Emotional Intelligence Matters in AI Advisory",
-                excerpt: "Exploring the intersection of human insight and artificial intelligence in strategic decision-making.",
-                date: "Coming Soon"
+                excerpt: "Decisions that shape organisations are rarely made in perfect conditions. Intelligence without emotional understanding is incomplete.",
+                date: "December 2025"
               },
               {
                 title: "Navigating Complexity: A Framework for Founders",
                 excerpt: "How to transform uncertainty into actionable strategy using intelligence-driven approaches.",
-                date: "Coming Soon"
-              },
-              {
-                title: "The Future of Strategic Intelligence",
-                excerpt: "What modular AI tools mean for the next generation of business leaders.",
                 date: "Coming Soon"
               }
             ].map((article, index) => (
