@@ -83,9 +83,13 @@ export default function Home() {
           <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-blue-300 to-blue-500 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
         </div>
 
-        {/* Compass Icon - Subtle Background */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-5">
-          <FaCompass className="text-[40rem]" />
+        {/* AcronIQ Logo - Subtle Background */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-30">
+          <img 
+            src="/images/original/Acron%20first%20logo%20transparent.png" 
+            alt="AcronIQ Logo" 
+            className="w-[1400px] h-auto object-contain"
+          />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 py-20">
