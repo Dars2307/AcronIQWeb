@@ -138,8 +138,13 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-navy mb-1">LinkedIn</h3>
-                    <a href="#" className="text-blue-600 hover:text-blue-700">
-                      @AcronIQResearch
+                    <a 
+                      href="https://www.linkedin.com/company/acroniq/" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:text-blue-700"
+                    >
+                      AcronIQ Research
                     </a>
                   </div>
                 </div>

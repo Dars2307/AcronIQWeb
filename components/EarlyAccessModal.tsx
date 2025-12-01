@@ -66,7 +66,7 @@ export default function EarlyAccessModal({ open, onClose }: EarlyAccessModalProp
         <div className="sticky top-0 bg-white rounded-t-2xl border-b border-gray-100 px-6 py-4 flex justify-between items-center">
           <div>
             <h2 className="text-2xl font-bold text-gray-900">Get Early Access</h2>
-            <p className="text-gray-600">Be first to try TrueNorth. Join the waitlist.</p>
+            <p className="text-gray-600">Be first to experience AcronIQ Veritus. Join the waitlist.</p>
           </div>
           <button 
             onClick={onClose} 

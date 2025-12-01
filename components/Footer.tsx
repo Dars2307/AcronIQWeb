@@ -70,7 +70,9 @@ export default function Footer() {
               </Link>
               <div className="flex space-x-4 pt-2">
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/company/acroniq/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-400 hover:text-blue-400 transition-colors"
                   aria-label="LinkedIn"
                 >
@@ -98,9 +100,14 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-700 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">
-              © 2025 AcronIQ Research. All rights reserved.
-            </p>
+            <div className="text-center md:text-left">
+              <p className="text-gray-400 text-sm mb-2">
+                © 2025 AcronIQ Research. All rights reserved.
+              </p>
+              <p className="text-gray-500 text-sm italic">
+                AcronIQ Research · Founded in Edinburgh · Built for the era of AI
+              </p>
+            </div>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link href="/legal/privacy" className="text-gray-400 hover:text-white text-sm transition-colors">
                 Privacy Policy

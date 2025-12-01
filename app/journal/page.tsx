@@ -7,34 +7,43 @@ import { FaCode, FaDatabase, FaChartLine, FaCog } from "react-icons/fa";
 export default function Journal() {
   const entries = [
     {
-      date: "10 November 2025",
-      focus: "AcronIQ Veritus Core Engine",
+      date: "Coming Soon",
+      focus: "Why Emotional Intelligence Matters in AI Advisory",
       icon: <FaCode className="text-2xl text-blue-400" />,
-      summary: "We finalised the baseline research pipeline structure:",
+      summary: "Exploring the intersection of human insight and artificial intelligence in strategic decision-making.",
       details: [
-        "Supabase schema architecture confirmed",
-        "First prompt iteration and validation testing underway", 
-        "Extracted early model behaviour patterns to refine scoring logic"
+        "How emotional intelligence enhances AI-driven advisory",
+        "The role of trust and empathy in high-stakes decisions",
+        "Building intelligence systems that resonate with human needs",
+        "Case studies: When data alone isn't enough"
       ],
-      next: [
-        "Implement report formatting layer",
-        "Begin preliminary accuracy benchmarking against manual research sets"
-      ]
+      next: []
     },
     {
-      date: "3 November 2025",
-      focus: "System Architecture Planning",
+      date: "Coming Soon",
+      focus: "Navigating Complexity: A Framework for Founders",
       icon: <FaDatabase className="text-2xl text-green-400" />,
-      summary: "Completed foundational infrastructure decisions:",
+      summary: "How to transform uncertainty into actionable strategy using intelligence-driven approaches.",
       details: [
-        "Selected Next.js with TypeScript for frontend reliability",
-        "Confirmed Supabase for data layer and authentication",
-        "Established development workflow and version control standards"
+        "Understanding complexity vs. complication in business",
+        "Decision frameworks for high-uncertainty environments",
+        "The role of strategic intelligence in founder journeys",
+        "Tools and methodologies for clarity in chaos"
       ],
-      next: [
-        "Begin AcronIQ Veritus core engine development",
-        "Design initial database schema for research workflows"
-      ]
+      next: []
+    },
+    {
+      date: "Coming Soon",
+      focus: "The Future of Strategic Intelligence",
+      icon: <FaChartLine className="text-2xl text-purple-400" />,
+      summary: "What modular AI tools mean for the next generation of business leaders.",
+      details: [
+        "Evolution from traditional consulting to AI-augmented advisory",
+        "Modular intelligence: Building blocks for strategic advantage",
+        "The democratization of high-quality strategic insights",
+        "Preparing for the intelligence-first organization"
+      ],
+      next: []
     }
   ];
 
@@ -50,18 +59,18 @@ export default function Journal() {
             className="text-center"
           >
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              AcronIQ Development Journal
+              Insights & Research
             </h1>
             <div className="w-24 h-1 bg-blue-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              AcronIQ is under active development. We build transparently.
+              Thought leadership on AI, strategy, and the future of intelligence.
             </p>
             <p className="text-lg text-gray-400 max-w-3xl mx-auto mt-4 leading-relaxed">
-              This journal documents our strategic decisions, research progress, and system architecture milestones 
-              as we shape the intelligence infrastructure behind AcronIQ Veritus and the AcronIQ ecosystem.
+              Exploring the intersection of artificial intelligence, strategic decision-making, and the evolving landscape 
+              of business intelligence. We share insights on navigating complexity, building with precision, and leading in the age of AI.
             </p>
             <p className="text-lg text-blue-400 font-medium mt-6">
-              Expect clarity. Expect detail. Expect precision.
+              Clarity. Precision. Intelligence that resonates.
             </p>
           </motion.div>
         </div>
@@ -73,7 +82,7 @@ export default function Journal() {
           <div className="space-y-12">
             {entries.map((entry, index) => (
               <motion.article
-                key={entry.date}
+                key={entry.focus}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -94,8 +103,8 @@ export default function Journal() {
                 
                 <div className="p-6">
                   <div className="mb-6">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-3">Summary</h3>
-                    <p className="text-gray-700 mb-4">{entry.summary}</p>
+                    <p className="text-gray-700 text-lg mb-4 leading-relaxed">{entry.summary}</p>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-3">Key Topics</h3>
                     <ul className="space-y-2">
                       {entry.details.map((detail, idx) => (
                         <li key={idx} className="flex items-start">
@@ -106,16 +115,10 @@ export default function Journal() {
                     </ul>
                   </div>
                   
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-3">Next</h3>
-                    <ul className="space-y-2">
-                      {entry.next.map((item, idx) => (
-                        <li key={idx} className="flex items-start">
-                          <span className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                          <span className="text-gray-700">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                    <p className="text-blue-800 font-medium text-center">
+                      📝 Article in development — stay tuned for publication
+                    </p>
                   </div>
                 </div>
               </motion.article>
@@ -131,9 +134,12 @@ export default function Journal() {
           >
             <div className="bg-gray-900 text-white rounded-lg p-8">
               <FaCog className="text-4xl text-blue-400 mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-2">Development Continues</h3>
-              <p className="text-gray-400">
-                New entries published weekly. Follow our progress as we build the future of strategic intelligence.
+              <h3 className="text-xl font-bold mb-2">More Insights Coming Soon</h3>
+              <p className="text-gray-400 mb-4">
+                We're developing thought leadership content on AI, strategy, and the future of intelligence.
+              </p>
+              <p className="text-blue-400 font-medium">
+                Subscribe to our early access programme to be notified when new articles are published.
               </p>
             </div>
           </motion.div>
