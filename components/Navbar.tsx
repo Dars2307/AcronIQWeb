@@ -18,6 +18,21 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    // Close dropdown when clicking outside
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest('.products-dropdown-container')) {
+        setShowProductsDropdown(false);
+      }
+    };
+
+    if (showProductsDropdown) {
+      document.addEventListener('click', handleClickOutside);
+      return () => document.removeEventListener('click', handleClickOutside);
+    }
+  }, [showProductsDropdown]);
+
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
@@ -55,11 +70,14 @@ export default function Navbar() {
             
             {/* Products Dropdown */}
             <div 
-              className="relative"
+              className="relative products-dropdown-container"
               onMouseEnter={() => setShowProductsDropdown(true)}
               onMouseLeave={() => setShowProductsDropdown(false)}
             >
-              <button className="flex items-center gap-1 text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200">
+              <button 
+                onClick={() => setShowProductsDropdown(!showProductsDropdown)}
+                className="flex items-center gap-1 text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+              >
                 Products
                 <HiChevronDown className={`w-4 h-4 transition-transform duration-200 ${showProductsDropdown ? 'rotate-180' : ''}`} />
               </button>
@@ -68,6 +86,7 @@ export default function Navbar() {
                 <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50">
                   <Link
                     href="/products"
+                    onClick={() => setShowProductsDropdown(false)}
                     className="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200"
                   >
                     <div className="font-medium">Our Products</div>
@@ -75,6 +94,7 @@ export default function Navbar() {
                   </Link>
                   <Link
                     href="/pricing"
+                    onClick={() => setShowProductsDropdown(false)}
                     className="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200"
                   >
                     <div className="font-medium">Pricing</div>
