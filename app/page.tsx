@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Layout from "@/components/Layout";
 import EarlyAccessModal from "@/components/EarlyAccessModal";
@@ -15,9 +15,35 @@ import {
   FaBrain,
   FaLightbulb
 } from "react-icons/fa";
+import { fetchSiteContent, fetchProducts, fetchRoadmap } from "@/lib/content";
+import type { Product, RoadmapItem } from "@/lib/supabase";
 
 export default function Home() {
   const [showEarlyAccess, setShowEarlyAccess] = useState(false);
+  const [siteContent, setSiteContent] = useState<Record<string, string>>({});
+  const [products, setProducts] = useState<Product[]>([]);
+  const [roadmap, setRoadmap] = useState<RoadmapItem[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadContent() {
+      try {
+        const [content, productsData, roadmapData] = await Promise.all([
+          fetchSiteContent(['hero_headline', 'hero_subline', 'hero_cta_primary', 'hero_cta_secondary', 'founder_quote', 'founder_name', 'founder_title']),
+          fetchProducts(),
+          fetchRoadmap()
+        ]);
+        setSiteContent(content);
+        setProducts(productsData.slice(0, 3)); // Top 3 for homepage
+        setRoadmap(roadmapData.slice(0, 3)); // Top 3 for homepage
+      } catch (error) {
+        console.error('Error loading content:', error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadContent();
+  }, []);
 
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
@@ -43,35 +69,11 @@ export default function Home() {
     }
   ];
 
-  const products = [
-    {
-      icon: <FaBrain className="text-4xl text-blue-600" />,
-      title: "Strategic Intelligence Advisory",
-      badge: "Flagship Service",
-      description: "High-stakes decision support for founders and leaders navigating complexity with confidence.",
-      link: "/products"
-    },
-    {
-      icon: <FaChartLine className="text-4xl text-blue-600" />,
-      title: "Signals Platform",
-      badge: "Coming Soon",
-      description: "AI-driven dashboards delivering real-time market intelligence and trend detection.",
-      link: "/products"
-    },
-    {
-      icon: <FaShieldAlt className="text-4xl text-blue-600" />,
-      title: "Early Access Tools",
-      badge: "Beta",
-      description: "Decision modeling and scenario planning tools for strategic foresight.",
-      link: "/early-access"
-    }
-  ];
-
-  const roadmapMilestones = [
-    { quarter: "Q4 2025", title: "AcronIQ Veritus Core", status: "active" },
-    { quarter: "Q1 2026", title: "£199 Lean Report Product", status: "upcoming" },
-    { quarter: "Q2 2026", title: "AcronIQ Portal", status: "upcoming" }
-  ];
+  const productIcons: Record<string, JSX.Element> = {
+    'strategic-intelligence-advisory': <FaBrain className="text-4xl text-blue-600" />,
+    'signals-platform': <FaChartLine className="text-4xl text-blue-600" />,
+    'early-access-tools': <FaShieldAlt className="text-4xl text-blue-600" />
+  };
 
   return (
     <Layout>
@@ -105,10 +107,7 @@ export default function Home() {
             transition={{ delay: 0.1 }}
             className="text-5xl md:text-7xl font-bold mb-8 leading-tight"
           >
-            Clarity in Complexity.{" "}
-            <span className="bg-gradient-to-r from-blue-300 via-blue-200 to-white bg-clip-text text-transparent">
-              Intelligence You Can Trust.
-            </span>
+            {loading ? 'Clarity in Complexity. Intelligence You Can Trust.' : (siteContent.hero_headline || 'Clarity in Complexity. Intelligence You Can Trust.')}
           </motion.h1>
 
           <motion.p
@@ -116,7 +115,7 @@ export default function Home() {
             transition={{ delay: 0.2 }}
             className="text-xl md:text-2xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed"
           >
-            Strategic intelligence and AI advisory for leaders navigating high-stakes decisions with precision and trust.
+            {loading ? 'Strategic intelligence and AI advisory for leaders navigating high-stakes decisions with precision and trust.' : (siteContent.hero_subline || 'Strategic intelligence and AI advisory for leaders navigating high-stakes decisions with precision and trust.')}
           </motion.p>
 
           <motion.div
@@ -128,14 +127,14 @@ export default function Home() {
               href="/contact" 
               className="px-8 py-4 bg-white text-navy font-bold text-lg rounded-lg hover:bg-blue-50 hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
             >
-              Contact Us
+              {siteContent.hero_cta_primary || 'Contact Us'}
             </Link>
             <button
               onClick={() => setShowEarlyAccess(true)}
               className="px-8 py-4 bg-transparent text-white font-semibold text-lg rounded-lg border-2 border-white hover:bg-white hover:text-navy transition-all duration-300"
             >
               <FaRocket className="inline mr-2" />
-              Join Early Access
+              {siteContent.hero_cta_secondary || 'Join Early Access'}
             </button>
           </motion.div>
         </div>
@@ -211,7 +210,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {products.map((product, index) => (
               <motion.div
-                key={product.title}
+                key={product.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -219,23 +218,17 @@ export default function Home() {
                 className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 border border-gray-100 hover:border-blue-200 group"
               >
                 <div className="flex justify-center mb-6 transform group-hover:scale-110 transition-transform duration-300">
-                  {product.icon}
+                  {productIcons[product.slug] || <FaBrain className="text-4xl text-blue-600" />}
                 </div>
                 <div className="flex items-center justify-center gap-2 mb-4">
-                  <h3 className="text-2xl font-bold text-navy">{product.title}</h3>
+                  <h3 className="text-2xl font-bold text-navy">{product.name}</h3>
                 </div>
-                <span className={`inline-block px-3 py-1 text-xs font-semibold rounded-full mb-4 ${
-                  product.badge === "Flagship Service" 
-                    ? "bg-blue-100 text-blue-800 border border-blue-200" 
-                    : product.badge === "Beta"
-                    ? "bg-green-100 text-green-800 border border-green-200"
-                    : "bg-orange-100 text-orange-800 border border-orange-200"
-                }`}>
-                  {product.badge}
+                <span className={`inline-block px-3 py-1 text-xs font-semibold rounded-full mb-4 border ${product.badge_color || 'bg-blue-100 text-blue-800 border-blue-200'}`}>
+                  {product.status}
                 </span>
                 <p className="text-gray-600 mb-6 leading-relaxed">{product.description}</p>
                 <Link 
-                  href={product.link}
+                  href={product.link || '/products'}
                   className="inline-block text-blue-600 font-semibold hover:text-blue-700 transition-colors"
                 >
                   Learn More →
@@ -281,10 +274,10 @@ export default function Home() {
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">Why AcronIQ Exists</h2>
               <p className="text-xl text-blue-100 mb-6 leading-relaxed text-center italic">
-                "I founded AcronIQ because leaders deserve clarity, even when the world is at its most complex. In an age flooded with data, the true competitive advantage isn't more information—it's precision, trust, and intelligence that resonates."
+                "{siteContent.founder_quote || 'I founded AcronIQ because leaders deserve clarity, even when the world is at its most complex. In an age flooded with data, the true competitive advantage isn\'t more information—it\'s precision, trust, and intelligence that resonates.'}"
               </p>
               <p className="text-lg text-blue-200 mb-8 text-center">
-                — Joel Ogunniyi, Founder & Chief Executive Officer
+                — {siteContent.founder_name || 'Joel Ogunniyi'}, {siteContent.founder_title || 'Founder & Chief Executive Officer'}
               </p>
               <div className="text-center">
                 <Link
@@ -391,9 +384,9 @@ export default function Home() {
               {/* Timeline Line */}
               <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-blue-600 via-blue-400 to-gray-300"></div>
 
-              {roadmapMilestones.map((milestone, index) => (
+              {roadmap.map((item, index) => (
                 <motion.div
-                  key={milestone.quarter}
+                  key={item.id}
                   initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
@@ -404,15 +397,15 @@ export default function Home() {
                 >
                   <div className={`w-5/12 ${index % 2 === 0 ? 'text-right pr-8' : 'text-left pl-8'}`}>
                     <div className={`bg-white rounded-xl shadow-lg p-6 border-2 ${
-                      milestone.status === 'active' 
+                      item.status === 'In Progress' 
                         ? 'border-blue-600 bg-blue-50' 
                         : 'border-gray-200'
                     }`}>
-                      <h3 className="text-2xl font-bold text-navy mb-2">{milestone.title}</h3>
-                      <p className="text-blue-600 font-semibold">{milestone.quarter}</p>
-                      {milestone.status === 'active' && (
+                      <h3 className="text-2xl font-bold text-navy mb-2">{item.title}</h3>
+                      <p className="text-blue-600 font-semibold">{item.timeline}</p>
+                      {item.status === 'In Progress' && (
                         <span className="inline-block mt-2 px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full">
-                          In Progress
+                          {item.status}
                         </span>
                       )}
                     </div>
@@ -420,7 +413,7 @@ export default function Home() {
                   
                   {/* Center Circle */}
                   <div className={`absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full border-4 ${
-                    milestone.status === 'active' 
+                    item.status === 'In Progress' 
                       ? 'bg-blue-600 border-blue-200' 
                       : 'bg-white border-gray-300'
                   }`}></div>
