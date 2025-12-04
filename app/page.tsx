@@ -123,26 +123,41 @@ export default function Home() {
             transition={{ delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Link 
-              href="/contact" 
-              className="px-8 py-4 bg-white text-navy font-bold text-lg rounded-lg hover:bg-blue-50 hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
-            >
-              {siteContent.hero_cta_primary || 'Contact Us'}
-            </Link>
-            <button
-              onClick={() => setShowEarlyAccess(true)}
-              className="px-8 py-4 bg-transparent text-white font-semibold text-lg rounded-lg border-2 border-white hover:bg-white hover:text-navy transition-all duration-300"
-            >
-              <FaRocket className="inline mr-2" />
-              {siteContent.hero_cta_secondary || 'Join Early Access'}
-            </button>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link 
+                href="/contact" 
+                className="inline-block px-8 py-4 bg-white text-navy font-bold text-lg rounded-lg hover:bg-blue-50 hover:shadow-2xl transition-all duration-300 relative overflow-hidden group"
+              >
+                <span className="relative z-10">{siteContent.hero_cta_primary || 'Contact Us'}</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+              </Link>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <button
+                onClick={() => setShowEarlyAccess(true)}
+                className="px-8 py-4 bg-transparent text-white font-semibold text-lg rounded-lg border-2 border-white hover:bg-white hover:text-navy transition-all duration-300 relative overflow-hidden group"
+              >
+                <span className="relative z-10 inline-flex items-center">
+                  <FaRocket className="mr-2" />
+                  {siteContent.hero_cta_secondary || 'Join Early Access'}
+                </span>
+              </button>
+            </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* Value Proposition - Three Pillars */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 bg-white relative overflow-hidden">
+        {/* Subtle background pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'radial-gradient(circle at 2px 2px, #3b82f6 1px, transparent 0)',
+            backgroundSize: '40px 40px'
+          }}></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -163,11 +178,16 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.15 }}
-                className="text-center group"
+                whileHover={{ y: -10, scale: 1.02 }}
+                className="text-center group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-blue-200"
               >
-                <div className="flex justify-center mb-6 transform group-hover:scale-110 transition-transform duration-300">
+                <motion.div 
+                  className="flex justify-center mb-6"
+                  whileHover={{ rotate: 360, scale: 1.2 }}
+                  transition={{ duration: 0.6 }}
+                >
                   {pillar.icon}
-                </div>
+                </motion.div>
                 <h3 className="text-2xl font-bold text-navy mb-4">{pillar.title}</h3>
                 <p className="text-gray-600 text-lg leading-relaxed">{pillar.description}</p>
               </motion.div>
@@ -215,24 +235,43 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.15 }}
-                className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 border border-gray-100 hover:border-blue-200 group"
+                whileHover={{ y: -15, scale: 1.03 }}
+                className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 border border-gray-100 hover:border-blue-400 group relative overflow-hidden"
               >
-                <div className="flex justify-center mb-6 transform group-hover:scale-110 transition-transform duration-300">
-                  {productIcons[product.slug] || <FaBrain className="text-4xl text-blue-600" />}
+                {/* Animated gradient background on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                <div className="relative z-10">
+                  <motion.div 
+                    className="flex justify-center mb-6"
+                    whileHover={{ rotate: 360, scale: 1.2 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    {productIcons[product.slug] || <FaBrain className="text-4xl text-blue-600" />}
+                  </motion.div>
+                  <div className="flex items-center justify-center gap-2 mb-4">
+                    <h3 className="text-2xl font-bold text-navy">{product.name}</h3>
+                  </div>
+                  <span className={`inline-block px-3 py-1 text-xs font-semibold rounded-full mb-4 border ${product.badge_color || 'bg-blue-100 text-blue-800 border-blue-200'}`}>
+                    {product.status}
+                  </span>
+                  <p className="text-gray-600 mb-6 leading-relaxed">{product.description}</p>
+                  <motion.div whileHover={{ x: 5 }}>
+                    <Link 
+                      href={product.link || '/products'}
+                      className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors"
+                    >
+                      Learn More 
+                      <motion.span
+                        animate={{ x: [0, 5, 0] }}
+                        transition={{ repeat: Infinity, duration: 1.5 }}
+                        className="ml-1"
+                      >
+                        →
+                      </motion.span>
+                    </Link>
+                  </motion.div>
                 </div>
-                <div className="flex items-center justify-center gap-2 mb-4">
-                  <h3 className="text-2xl font-bold text-navy">{product.name}</h3>
-                </div>
-                <span className={`inline-block px-3 py-1 text-xs font-semibold rounded-full mb-4 border ${product.badge_color || 'bg-blue-100 text-blue-800 border-blue-200'}`}>
-                  {product.status}
-                </span>
-                <p className="text-gray-600 mb-6 leading-relaxed">{product.description}</p>
-                <Link 
-                  href={product.link || '/products'}
-                  className="inline-block text-blue-600 font-semibold hover:text-blue-700 transition-colors"
-                >
-                  Learn More →
-                </Link>
               </motion.div>
             ))}
           </div>
@@ -293,6 +332,45 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Interactive Stats Section */}
+      <section className="py-20 bg-gradient-to-br from-navy via-blue-900 to-indigo-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-400 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-400 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            {[
+              { number: "2025", label: "Founded", suffix: "" },
+              { number: "3", label: "Core Products", suffix: "+" },
+              { number: "100", label: "Early Access Users", suffix: "%" }
+            ].map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.2, type: "spring" }}
+                whileHover={{ scale: 1.1 }}
+                className="p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 hover:bg-white/20 transition-all duration-300"
+              >
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.2 + 0.3 }}
+                  className="text-5xl md:text-6xl font-bold mb-2"
+                >
+                  {stat.number}{stat.suffix}
+                </motion.div>
+                <div className="text-xl text-blue-200">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Journal / Insights */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -332,17 +410,32 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.15 }}
-                className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 border border-gray-100 hover:border-blue-200"
+                whileHover={{ y: -10, scale: 1.02 }}
+                className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 border border-gray-100 hover:border-blue-300 group cursor-pointer relative overflow-hidden"
               >
-                <span className="text-sm text-blue-600 font-semibold">{article.date}</span>
-                <h3 className="text-xl font-bold text-navy mt-3 mb-3">{article.title}</h3>
-                <p className="text-gray-600 mb-4 leading-relaxed">{article.excerpt}</p>
-                <Link 
-                  href="/journal"
-                  className="inline-block text-blue-600 font-semibold hover:text-blue-700 transition-colors"
-                >
-                  Read More →
-                </Link>
+                {/* Animated corner accent */}
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-400 to-indigo-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-bl-full"></div>
+                
+                <div className="relative z-10">
+                  <span className="text-sm text-blue-600 font-semibold">{article.date}</span>
+                  <h3 className="text-xl font-bold text-navy mt-3 mb-3 group-hover:text-blue-600 transition-colors">{article.title}</h3>
+                  <p className="text-gray-600 mb-4 leading-relaxed">{article.excerpt}</p>
+                  <motion.div whileHover={{ x: 5 }}>
+                    <Link 
+                      href="/journal"
+                      className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors"
+                    >
+                      Read More 
+                      <motion.span
+                        animate={{ x: [0, 5, 0] }}
+                        transition={{ repeat: Infinity, duration: 1.5 }}
+                        className="ml-1"
+                      >
+                        →
+                      </motion.span>
+                    </Link>
+                  </motion.div>
+                </div>
               </motion.div>
             ))}
           </div>
