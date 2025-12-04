@@ -3,17 +3,17 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { HiMenu, HiX } from "react-icons/hi";
+import { HiMenu, HiX, HiChevronDown } from "react-icons/hi";
 import EarlyAccessModal from "./EarlyAccessModal";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [showProductsDropdown, setShowProductsDropdown] = useState(false);
 
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
-    { href: "/products", label: "Products" },
     { href: "/journal", label: "Journal" },
     { href: "/roadmap", label: "Roadmap" },
     { href: "/contact", label: "Contact" },
@@ -47,6 +47,38 @@ export function Header() {
                   {link.label}
                 </Link>
               ))}
+              
+              {/* Products Dropdown */}
+              <div 
+                className="relative"
+                onMouseEnter={() => setShowProductsDropdown(true)}
+                onMouseLeave={() => setShowProductsDropdown(false)}
+              >
+                <button className="flex items-center gap-1 text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200">
+                  Products
+                  <HiChevronDown className={`w-4 h-4 transition-transform duration-200 ${showProductsDropdown ? 'rotate-180' : ''}`} />
+                </button>
+                
+                {showProductsDropdown && (
+                  <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50">
+                    <Link
+                      href="/products"
+                      className="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200"
+                    >
+                      <div className="font-medium">Our Products</div>
+                      <div className="text-xs text-gray-500 mt-0.5">Veritus & PIC-1</div>
+                    </Link>
+                    <Link
+                      href="/pricing"
+                      className="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-200"
+                    >
+                      <div className="font-medium">Pricing</div>
+                      <div className="text-xs text-gray-500 mt-0.5">Plans & features</div>
+                    </Link>
+                  </div>
+                )}
+              </div>
+
               <button
                 onClick={() => setShowModal(true)}
                 className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium"
@@ -77,12 +109,32 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
+            
+            {/* Mobile Products Section */}
+            <div className="py-2">
+              <div className="text-gray-900 font-semibold mb-2">Products</div>
+              <Link
+                href="/products"
+                className="block py-2 pl-4 text-gray-700 hover:text-blue-600 transition-colors duration-200"
+                onClick={() => setIsOpen(false)}
+              >
+                Our Products
+              </Link>
+              <Link
+                href="/pricing"
+                className="block py-2 pl-4 text-gray-700 hover:text-blue-600 transition-colors duration-200"
+                onClick={() => setIsOpen(false)}
+              >
+                Pricing
+              </Link>
+            </div>
+
             <button
               onClick={() => {
                 setShowModal(true);
                 setIsOpen(false);
               }}
-              className="block mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium text-center"
+              className="block w-full mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium text-center"
             >
               Early Access
             </button>
