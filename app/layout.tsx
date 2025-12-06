@@ -4,7 +4,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "AcronIQ Research | Transforming Ideas into Intelligent Solutions",
-  description: "We provide AI-driven insight and research to empower businesses and drive innovation. Discover TrueNorth, AcronIQ Signals, and NexusOne Portal.",
+  description: "We provide AI-driven insight and research to empower businesses and drive innovation. Discover Veritus, AcronIQ Signals, and BusinessHub.",
   keywords: ["AI research", "business intelligence", "market insights", "AI strategy", "AcronIQ"],
   authors: [{ name: "AcronIQ Research" }],
   icons: {

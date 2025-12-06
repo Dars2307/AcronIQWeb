@@ -77,7 +77,7 @@ Your core offer is:
 
 > **Clear decisions. Faster than anyone else. With higher confidence.**
 
-TrueNorth, Signals, NexusOne, etc. are **instruments in your intelligence workflow**, not “products you sell.”
+Veritus, Signals, BusinessHub, etc. are **instruments in your intelligence workflow**, not “products you sell.”
 
 This is what separates you from *every* AI startup and *every* consultancy.
 

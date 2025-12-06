@@ -162,7 +162,7 @@ Update product details in `app/products/page.tsx`:
 ```tsx
 const products = [
   {
-    title: "TrueNorth",
+    title: "Veritus",
     subtitle: "AI Strategist & Business Validator",
     // ...
   }
@@ -429,9 +429,9 @@ export async function getProducts() {
 - Animated timeline (Framer Motion)
 
 ### Products Page (`/products`)
-- TrueNorth details and features
+- Veritus details and features
 - AcronIQ Signals information
-- NexusOne Portal overview
+- BusinessHub overview
 - Call-to-action sections
 
 ### Contact Page (`/contact`)

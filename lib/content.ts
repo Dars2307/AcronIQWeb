@@ -74,7 +74,7 @@ export const FALLBACK_ROADMAP: RoadmapItem[] = [
   {
     id: '3',
     phase: 'Phase 3',
-    title: 'AcronIQ Portal',
+    title: 'BusinessHub',
     timeline: 'Q2 2026',
     status: 'Planned',
     focus: 'Client deliverables',
