@@ -355,7 +355,7 @@ export default function Products() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 p-8 lg:p-12">
               <div>
                 <FaShieldAlt className="text-6xl text-gray-700 mb-6" />
-                <h2 className="text-4xl font-bold text-navy mb-4">AcronIQ Portal</h2>
+                <h2 className="text-4xl font-bold text-navy mb-4">BusinessHub</h2>
                 <p className="text-xl text-gray-700 mb-6 leading-relaxed">
                   Internal ops + client intelligence embedded into daily decisions.
                 </p>
@@ -407,7 +407,7 @@ export default function Products() {
                     <div className="inline-block p-4 bg-gray-100 rounded-full mb-4">
                       <FaShieldAlt className="text-5xl text-gray-700" />
                     </div>
-                    <h3 className="text-2xl font-bold text-navy mb-2">Unified Workspace</h3>
+                    <h3 className="text-2xl font-bold text-navy mb-2">BusinessHub — Unified Workspace</h3>
                     <p className="text-gray-600">External release roadmap Q3 2026</p>
                   </div>
                   <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">

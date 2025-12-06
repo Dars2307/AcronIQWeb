@@ -6,19 +6,19 @@ export const dynamic = 'force-dynamic';
 interface ChatMessage { role: 'user' | 'assistant'; content: string }
 
 function buildFallbackAnswer(question: string): string {
-  const base = `I'm AcronIQ Assist, here to help you navigate our platform. AcronIQ offers strategic intelligence solutions for leaders.
+  const base = `I'm AcronIQ Assist, here to help you navigate our platform. AcronIQ provides clarity in complexity through strategic intelligence and AI advisory for leaders navigating high-stakes decisions.
 
 Our products:
-- Veritus: Strategic Intelligence Advisor (for deep analysis)
-- Signals: Market intelligence dashboards (beta)
-- BusinessHub: Secure client workspace (coming soon)
+- Veritus: Strategic Intelligence Advisor (intelligence with purpose)
+- Signals: Market intelligence dashboards (signal over noise)
+- BusinessHub: Secure client workspace (collaboration & insights)
 
-For strategic analysis, Veritus can help you directly.`;
+For strategic analysis requiring precision and trust, Veritus can help you directly.`;
   
   const q = question.toLowerCase();
-  if (q.includes('veritus')) return 'Veritus is AcronIQ\'s Strategic Intelligence Advisor — our premium product for deep strategic analysis. For detailed strategic insight, you can speak directly with Veritus.';
-  if (q.includes('signals')) return 'Signals provides market intelligence dashboards to help you spot important trends early. It\'s currently in beta.';
-  if (q.includes('businesshub') || q.includes('portal') || q.includes('hub')) return 'BusinessHub is our secure client workspace for reports and collaboration. It\'s coming soon in our roadmap.';
+  if (q.includes('veritus')) return 'Veritus is AcronIQ\'s Strategic Intelligence Advisor — intelligence with purpose. It translates ambiguity into decisive direction with explainable AI reasoning. For detailed strategic insight requiring precision and trust, you can speak directly with Veritus.';
+  if (q.includes('signals')) return 'Signals provides AI-driven dashboards that reveal signal over noise in complex systems, helping leaders act with clarity. It\'s currently in development.';
+  if (q.includes('businesshub') || q.includes('portal') || q.includes('hub')) return 'BusinessHub is our secure client workspace for collaboration, insights, and decision workflows — designed for executive teams. It\'s coming soon in our roadmap.';
   if (q.includes('early access') || q.includes('beta') || q.includes('waitlist')) return 'Join Early Access to get priority updates and help shape our product development. You can sign up through our Early Access page.';
   if (q.includes('roadmap')) return 'Our roadmap: Q1 Early Access launch, Q2 Signals beta, Q3 advisory expansion. Visit our roadmap page for details.';
   if (q.includes('pricing') || q.includes('cost') || q.includes('£199')) return 'We offer strategic research reports starting at £199. For detailed pricing and strategic consultation, Veritus can provide personalized guidance.';
@@ -56,7 +56,7 @@ export async function POST(req: Request) {
         messages,
         max_tokens: 400,
         temperature: 0.2,
-        system: 'You are AcronIQ Assist, a helpful platform guide. Provide brief, informative answers about AcronIQ products and navigation. For strategic analysis, always refer users to "Veritus, AcronIQ\'s Strategic Intelligence Advisor." Keep responses to 2-4 sentences. Never provide strategic advice or deep analysis yourself.',
+        system: 'You are AcronIQ Assist, a helpful platform guide. AcronIQ provides clarity in complexity through strategic intelligence and AI advisory. Provide brief, informative answers about our products and navigation. For strategic analysis requiring precision and trust, always refer users to "Veritus, AcronIQ\'s Strategic Intelligence Advisor." Keep responses to 2-4 sentences. Never provide strategic advice yourself.',
       }),
       signal: controller.signal,
       cache: 'no-store',

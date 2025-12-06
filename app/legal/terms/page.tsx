@@ -33,7 +33,7 @@ export default function Terms() {
               <ul className="list-disc pl-6 space-y-2">
                 <li>AcronIQ Veritus - Intelligence With Purpose</li>
                 <li>AcronIQ Signals - Market intelligence and trend detection</li>
-                <li>AcronIQ Portal - Secure client workspace</li>
+                <li>BusinessHub - Secure client workspace</li>
               </ul>
             </section>
 

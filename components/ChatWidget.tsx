@@ -11,7 +11,7 @@ export default function ChatWidget({ onClose }: { onClose: () => void }) {
     {
       role: "assistant",
       content:
-        "Hi, I'm AcronIQ Assist — your guide through the platform. Need help understanding AcronIQ, our products, or the Veritus beta? Ask me anything and I'll guide you.",
+        "Hello! I'm AcronIQ Assist, here to help you navigate our platform. AcronIQ provides clarity in complexity through strategic intelligence and AI advisory. I can help you learn about our products, Early Access programme, or site navigation. How can I assist you today?",
     },
   ]);
   const [input, setInput] = useState("");
@@ -38,7 +38,7 @@ export default function ChatWidget({ onClose }: { onClose: () => void }) {
       if (!res.ok) throw new Error("Request failed");
       const data = await res.json();
       const answer = (data && data.answer) ||
-        "I couldn't retrieve live data just now, but I can help with questions about AcronIQ products, Early Access, and platform navigation. For strategic analysis, Veritus can help you.";
+        "I'm here to help with questions about AcronIQ's strategic intelligence solutions, products, and Early Access programme. For strategic analysis requiring precision and trust, I'd recommend speaking with Veritus, our Strategic Intelligence Advisor. What would you like to know?";
       setMessages((prev) => [...prev, { role: "assistant", content: answer } as Message]);
     } catch (e) {
       setMessages((prev) => [
@@ -104,7 +104,7 @@ export default function ChatWidget({ onClose }: { onClose: () => void }) {
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={onKeyDown}
             rows={2}
-            placeholder="Ask about products, Early Access, or platform help…"
+            placeholder="Ask about strategic intelligence, products, or Early Access…"
             className="flex-1 resize-none rounded-md border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <button

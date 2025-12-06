@@ -208,5 +208,4 @@
 2. Add interactive pricing calculator
 3. Animate contact form
 4. Add journal article transitions
-5. Interactive roadmap timeline
-
+5. Interactive roadmap timeline.

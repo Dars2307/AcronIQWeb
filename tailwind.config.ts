@@ -22,12 +22,13 @@ const config: Config = {
             end: '#60A5FA',
           },
         },
-        // Previous welcoming color palette
-        charcoal: '#1f2937',        // Dark gray for contrast sections
-        charcoalLight: '#374151',   // Lighter gray for secondary sections  
-        stone: '#6b7280',           // Medium gray for text
-        bronze: '#3b82f6',          // Blue accent color
-        offwhite: '#f9fafb',        // Light background
+        // Brand palette (charcoal/bronze executive)
+        charcoal: '#111213',        // Primary background
+        charcoalLight: '#2B2D2E',   // Secondary surfaces (kept for compatibility)
+        graphite: '#2B2D2E',        // Alias for secondary surfaces
+        stone: '#B5B7BB',           // Body text
+        bronze: '#C28B4A',          // Signature accent
+        offwhite: '#E6E7E8',        // Softer secondary text
       },
       fontFamily: {
         sans: ['Inter', 'Poppins', 'system-ui', 'sans-serif'],

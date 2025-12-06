@@ -1,3 +1,5 @@
+# AcronIQ Research Mode (StandOut)
+
 Good. **A** is the correct play for you.
 Not loud. Not hype.
 **Quiet. Precise. Dangerous.**

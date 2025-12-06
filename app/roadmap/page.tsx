@@ -25,7 +25,7 @@ export default function Roadmap() {
       timeline: "Q1 2026"
     },
     {
-      phase: "Phase 3: AcronIQ Portal",
+      phase: "Phase 3: BusinessHub",
       status: "Planned", 
       statusColor: "bg-gray-500",
       focus: "Client deliverables and internal operations",
