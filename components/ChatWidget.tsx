@@ -11,7 +11,7 @@ export default function ChatWidget({ onClose }: { onClose: () => void }) {
     {
       role: "assistant",
       content:
-        "Hi — I’m the AcronIQ Assistant. Ask about Veritus, Signals, BusinessHub, Early Access, or our roadmap.",
+        "Hi, I'm AcronIQ Assist — your guide through the platform. Need help understanding AcronIQ, our products, or the Veritus beta? Ask me anything and I'll guide you.",
     },
   ]);
   const [input, setInput] = useState("");
@@ -38,7 +38,7 @@ export default function ChatWidget({ onClose }: { onClose: () => void }) {
       if (!res.ok) throw new Error("Request failed");
       const data = await res.json();
       const answer = (data && data.answer) ||
-        "I couldn’t retrieve live data just now, but I can answer questions about AcronIQ Veritus, Signals, BusinessHub, Early Access, and our roadmap.";
+        "I couldn't retrieve live data just now, but I can help with questions about AcronIQ products, Early Access, and platform navigation. For strategic analysis, Veritus can help you.";
       setMessages((prev) => [...prev, { role: "assistant", content: answer } as Message]);
     } catch (e) {
       setMessages((prev) => [
@@ -46,7 +46,7 @@ export default function ChatWidget({ onClose }: { onClose: () => void }) {
         {
           role: "assistant",
           content:
-            "I’m having trouble connecting. Quick guide: Veritus (core engine, intelligence with purpose), Signals (market intelligence dashboards), BusinessHub (secure client workspace), Early Access (priority access and updates).",
+            "I'm having trouble connecting. Quick guide: AcronIQ offers Veritus (Strategic Intelligence Advisor), Signals (market intelligence), BusinessHub (secure workspace), and Early Access programs.",
         } as Message,
       ]);
     } finally {
@@ -70,7 +70,7 @@ export default function ChatWidget({ onClose }: { onClose: () => void }) {
       className="fixed bottom-28 right-8 w-80 bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden z-50"
     >
       <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-4 flex items-center justify-between">
-        <div className="font-semibold">AcronIQ Assistant</div>
+        <div className="font-semibold">AcronIQ Assist</div>
         <button aria-label="Close chat" onClick={onClose} className="hover:opacity-80">
           <FaTimes />
         </button>
@@ -104,7 +104,7 @@ export default function ChatWidget({ onClose }: { onClose: () => void }) {
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={onKeyDown}
             rows={2}
-            placeholder="Ask about Veritus, Signals, or BusinessHub…"
+            placeholder="Ask about products, Early Access, or platform help…"
             className="flex-1 resize-none rounded-md border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <button
@@ -117,7 +117,7 @@ export default function ChatWidget({ onClose }: { onClose: () => void }) {
           </button>
         </div>
         <div className="text-[10px] text-gray-400 mt-1">
-          Powered by PIC when configured.
+          AcronIQ Assist — Your Platform Guide
         </div>
       </div>
     </motion.div>

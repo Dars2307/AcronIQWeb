@@ -6,21 +6,22 @@ export const dynamic = 'force-dynamic';
 interface ChatMessage { role: 'user' | 'assistant'; content: string }
 
 function buildFallbackAnswer(question: string): string {
-  const base = `AcronIQ helps leaders turn uncertainty into intelligence.
+  const base = `I'm AcronIQ Assist, here to help you navigate our platform. AcronIQ offers strategic intelligence solutions for leaders.
 
-Products:
-- AcronIQ Veritus — Intelligence With Purpose (core engine powered by PIC)
-- AcronIQ Signals — AI-driven dashboards for signal over noise (beta)
-- BusinessHub — Secure client workspace for collaboration and insights (coming)
+Our products:
+- Veritus: Strategic Intelligence Advisor (for deep analysis)
+- Signals: Market intelligence dashboards (beta)
+- BusinessHub: Secure client workspace (coming soon)
 
-Early Access: Join to get priority updates and influence the roadmap.`;
-  // Minimal heuristic
+For strategic analysis, Veritus can help you directly.`;
+  
   const q = question.toLowerCase();
-  if (q.includes('veritus')) return 'AcronIQ Veritus is the core intelligence engine (PIC). It translates ambiguity into decisive direction with explainable reasoning.';
-  if (q.includes('signals')) return 'AcronIQ Signals provides AI dashboards that surface the most important signals from complex systems so leaders can act early.';
-  if (q.includes('businesshub') || q.includes('portal') || q.includes('hub')) return 'BusinessHub is our secure client workspace for reports, collaboration, and decision workflows (pre-release).';
-  if (q.includes('early access') || q.includes('beta') || q.includes('waitlist')) return 'Join Early Access to receive product previews, strategic updates, and help shape priorities.';
-  if (q.includes('roadmap')) return 'Roadmap highlights: Q1 Early Access, Q2 Signals beta, Q3 advisory expansion and BusinessHub pilot.';
+  if (q.includes('veritus')) return 'Veritus is AcronIQ\'s Strategic Intelligence Advisor — our premium product for deep strategic analysis. For detailed strategic insight, you can speak directly with Veritus.';
+  if (q.includes('signals')) return 'Signals provides market intelligence dashboards to help you spot important trends early. It\'s currently in beta.';
+  if (q.includes('businesshub') || q.includes('portal') || q.includes('hub')) return 'BusinessHub is our secure client workspace for reports and collaboration. It\'s coming soon in our roadmap.';
+  if (q.includes('early access') || q.includes('beta') || q.includes('waitlist')) return 'Join Early Access to get priority updates and help shape our product development. You can sign up through our Early Access page.';
+  if (q.includes('roadmap')) return 'Our roadmap: Q1 Early Access launch, Q2 Signals beta, Q3 advisory expansion. Visit our roadmap page for details.';
+  if (q.includes('pricing') || q.includes('cost') || q.includes('£199')) return 'We offer strategic research reports starting at £199. For detailed pricing and strategic consultation, Veritus can provide personalized guidance.';
   return base;
 }
 
@@ -55,7 +56,7 @@ export async function POST(req: Request) {
         messages,
         max_tokens: 400,
         temperature: 0.2,
-        system: 'You are AcronIQ Assistant. Answer questions about AcronIQ, Veritus, Signals, and BusinessHub concisely and helpfully.',
+        system: 'You are AcronIQ Assist, a helpful platform guide. Provide brief, informative answers about AcronIQ products and navigation. For strategic analysis, always refer users to "Veritus, AcronIQ\'s Strategic Intelligence Advisor." Keep responses to 2-4 sentences. Never provide strategic advice or deep analysis yourself.',
       }),
       signal: controller.signal,
       cache: 'no-store',
@@ -71,7 +72,12 @@ export async function POST(req: Request) {
     }
 
     const data = await res.json().catch(() => ({}));
-    const answer = data?.answer || data?.choices?.[0]?.message?.content || buildFallbackAnswer(last?.content || '');
+    let answer = data?.answer || data?.choices?.[0]?.message?.content || buildFallbackAnswer(last?.content || '');
+    
+    // Add Veritus referral if the response seems strategic
+    if (answer.length > 200 || /analyz|strateg|recommend|advise|suggest.*business/i.test(answer)) {
+      answer += ' For deeper strategic analysis, you can speak directly with Veritus, AcronIQ\'s Strategic Intelligence Advisor.';
+    }
     return NextResponse.json({ answer }, { status: 200 });
   } catch (error) {
     const answer = buildFallbackAnswer('');
