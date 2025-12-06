@@ -16,6 +16,7 @@ import {
   FaRoad,
   FaNewspaper
 } from "react-icons/fa";
+import { EditModal } from "@/components/admin/EditModals";
 
 interface SiteContent {
   key: string;
@@ -107,6 +108,46 @@ export default function AdminCMS() {
     }
   };
 
+  const handleSave = async (data: any) => {
+    try {
+      const endpoint = `/api/admin/${activeTab}`;
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) throw new Error('Failed to save');
+
+      await fetchData(); // Refresh data
+      setEditingItem(null);
+      setShowAddModal(false);
+    } catch (error) {
+      console.error('Error saving:', error);
+      throw error;
+    }
+  };
+
+  const handleDelete = async (item: any) => {
+    if (!confirm('Are you sure you want to delete this item?')) return;
+
+    try {
+      const endpoint = `/api/admin/${activeTab}`;
+      const idParam = activeTab === 'site' ? `key=${item.key}` : `id=${item.id}`;
+      const response = await fetch(`${endpoint}?${idParam}`, {
+        method: 'DELETE',
+      });
+
+      if (!response.ok) throw new Error('Failed to delete');
+
+      await fetchData(); // Refresh data
+    } catch (error) {
+      console.error('Error deleting:', error);
+    }
+  };
+
   return (
     <Layout>
       <div className="min-h-screen bg-[#111213] text-[#E6E7E8]">
@@ -168,28 +209,40 @@ export default function AdminCMS() {
               {/* Content Grid */}
               <div className="grid gap-4">
                 {activeTab === 'site' && siteContent.map((item) => (
-                  <SiteContentCard key={item.key} item={item} onEdit={setEditingItem} />
+                  <SiteContentCard key={item.key} item={item} onEdit={setEditingItem} onDelete={handleDelete} />
                 ))}
                 {activeTab === 'products' && products.map((item) => (
-                  <ProductCard key={item.id} item={item} onEdit={setEditingItem} />
+                  <ProductCard key={item.id} item={item} onEdit={setEditingItem} onDelete={handleDelete} />
                 ))}
                 {activeTab === 'roadmap' && roadmapItems.map((item) => (
-                  <RoadmapCard key={item.id} item={item} onEdit={setEditingItem} />
+                  <RoadmapCard key={item.id} item={item} onEdit={setEditingItem} onDelete={handleDelete} />
                 ))}
                 {activeTab === 'journal' && journalPosts.map((item) => (
-                  <JournalCard key={item.id} item={item} onEdit={setEditingItem} />
+                  <JournalCard key={item.id} item={item} onEdit={setEditingItem} onDelete={handleDelete} />
                 ))}
               </div>
             </div>
           )}
         </div>
+
+        {/* Edit Modal */}
+        <EditModal
+          isOpen={!!editingItem || showAddModal}
+          onClose={() => {
+            setEditingItem(null);
+            setShowAddModal(false);
+          }}
+          onSave={handleSave}
+          item={editingItem}
+          type={activeTab}
+        />
       </div>
     </Layout>
   );
 }
 
 // Component cards for each content type
-function SiteContentCard({ item, onEdit }: { item: SiteContent; onEdit: (item: any) => void }) {
+function SiteContentCard({ item, onEdit, onDelete }: { item: SiteContent; onEdit: (item: any) => void; onDelete: (item: any) => void }) {
   return (
     <div className="bg-[#151617] border border-[#2B2D2E] rounded-sm p-6">
       <div className="flex justify-between items-start">
@@ -209,7 +262,7 @@ function SiteContentCard({ item, onEdit }: { item: SiteContent; onEdit: (item: a
   );
 }
 
-function ProductCard({ item, onEdit }: { item: Product; onEdit: (item: any) => void }) {
+function ProductCard({ item, onEdit, onDelete }: { item: Product; onEdit: (item: any) => void; onDelete: (item: any) => void }) {
   return (
     <div className="bg-[#151617] border border-[#2B2D2E] rounded-sm p-6">
       <div className="flex justify-between items-start">
@@ -238,7 +291,7 @@ function ProductCard({ item, onEdit }: { item: Product; onEdit: (item: any) => v
   );
 }
 
-function RoadmapCard({ item, onEdit }: { item: RoadmapItem; onEdit: (item: any) => void }) {
+function RoadmapCard({ item, onEdit, onDelete }: { item: RoadmapItem; onEdit: (item: any) => void; onDelete: (item: any) => void }) {
   return (
     <div className="bg-[#151617] border border-[#2B2D2E] rounded-sm p-6">
       <div className="flex justify-between items-start">
@@ -272,7 +325,7 @@ function RoadmapCard({ item, onEdit }: { item: RoadmapItem; onEdit: (item: any) 
   );
 }
 
-function JournalCard({ item, onEdit }: { item: JournalPost; onEdit: (item: any) => void }) {
+function JournalCard({ item, onEdit, onDelete }: { item: JournalPost; onEdit: (item: any) => void; onDelete: (item: any) => void }) {
   return (
     <div className="bg-[#151617] border border-[#2B2D2E] rounded-sm p-6">
       <div className="flex justify-between items-start">
