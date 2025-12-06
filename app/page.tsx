@@ -57,14 +57,11 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center justify-center bg-[#111213] text-[#E6E7E8] overflow-hidden">
         <div className="absolute inset-0 pointer-events-none opacity-[0.06]" style={{backgroundImage:"radial-gradient(circle at 1px 1px, #C28B4A 1px, transparent 0)",backgroundSize:"28px 28px"}} />
         <div className="relative z-10 max-w-6xl mx-auto px-6 py-28 text-center">
-          <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="font-mono tracking-[0.2em] text-xs text-[#C28B4A] mb-4">
-            STRATEGIC AI ADVISORY
-          </motion.p>
           <motion.h1 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="text-5xl md:text-7xl font-semibold leading-tight mb-6">
-            AcronIQ turns <span className="text-[#C28B4A]">uncertainty</span> into intelligence.
+            Clarity in Complexity. <span className="text-[#C28B4A]">Intelligence You Can Trust.</span>
           </motion.h1>
           <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="text-xl md:text-2xl text-[#B5B7BB] max-w-3xl mx-auto mb-10">
-            Strategic AI advisory for leaders navigating high‑stakes decisions.
+            Strategic intelligence and AI advisory for leaders navigating high-stakes decisions with precision and trust.
           </motion.p>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
             <button onClick={() => setShowEarlyAccess(true)} className="inline-flex items-center px-8 py-4 bg-[#C28B4A] text-[#111213] font-medium rounded-sm hover:opacity-90 transition">
