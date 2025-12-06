@@ -4,7 +4,7 @@
 import { JournalPost, SiteContent, Product, RoadmapItem } from './supabase';
 
 // Static fallback data
-const FALLBACK_SITE_CONTENT: Record<string, string> = {
+export const FALLBACK_SITE_CONTENT: Record<string, string> = {
   hero_headline: 'Clarity in Complexity. Intelligence You Can Trust.',
   hero_subline: 'Strategic intelligence and AI advisory for leaders navigating high-stakes decisions with precision and trust.',
   hero_cta_primary: 'Contact Us',
@@ -14,7 +14,7 @@ const FALLBACK_SITE_CONTENT: Record<string, string> = {
   founder_title: 'Founder & Chief Executive Officer',
 };
 
-const FALLBACK_PRODUCTS: Product[] = [
+export const FALLBACK_PRODUCTS: Product[] = [
   {
     id: '1',
     name: 'Strategic Intelligence Advisory',
@@ -50,7 +50,7 @@ const FALLBACK_PRODUCTS: Product[] = [
   }
 ];
 
-const FALLBACK_ROADMAP: RoadmapItem[] = [
+export const FALLBACK_ROADMAP: RoadmapItem[] = [
   {
     id: '1',
     phase: 'Phase 1',
