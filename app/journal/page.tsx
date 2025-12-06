@@ -133,7 +133,7 @@ At AcronIQ, we're designing intelligence systems that don't just give answers â€
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
+      <section className="py-20 bg-[#111213] text-[#E6E7E8]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -141,11 +141,18 @@ At AcronIQ, we're designing intelligence systems that don't just give answers â€
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="font-mono tracking-[0.2em] text-xs text-[#C28B4A] mb-6 uppercase"
+            >
+              Strategic Intelligence Journal
+            </motion.p>
+            <h1 className="text-4xl md:text-5xl font-semibold mb-6">
               Insights & Research
             </h1>
-            <div className="w-24 h-1 bg-blue-500 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-[#B5B7BB] max-w-3xl mx-auto leading-relaxed">
               Thought leadership on AI, strategy, and the future of intelligence.
             </p>
             <p className="text-lg text-gray-400 max-w-3xl mx-auto mt-4 leading-relaxed">
