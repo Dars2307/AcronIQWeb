@@ -8,94 +8,111 @@ export default function About() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative py-32 bg-gradient-to-br from-gray-900 via-blue-900 to-indigo-900 text-white overflow-hidden">
-        {/* Animated background */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-500 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        </div>
+      <section className="relative py-32 bg-[#111213] text-[#E6E7E8] overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none opacity-[0.03]" style={{backgroundImage:"radial-gradient(circle at 1px 1px, #C28B4A 1px, transparent 0)",backgroundSize:"32px 32px"}} />
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
-              className="inline-block mb-6"
-            >
-              <FaBrain className="text-6xl text-blue-400" />
-            </motion.div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              About AcronIQ
-            </h1>
-            <motion.div
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-              className="w-32 h-1 bg-gradient-to-r from-blue-400 to-indigo-400 mx-auto mb-8"
-            ></motion.div>
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.7 }}
-              className="text-xl text-blue-100 max-w-3xl mx-auto"
+              transition={{ delay: 0.2 }}
+              className="font-mono tracking-[0.2em] text-xs text-[#C28B4A] mb-6 uppercase"
             >
-              Building the future of strategic intelligence
+              Intelligence Organisation
+            </motion.p>
+            <h1 className="text-5xl md:text-7xl font-semibold mb-8 leading-tight">
+              About AcronIQ
+            </h1>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="text-xl text-[#B5B7BB] max-w-3xl mx-auto"
+            >
+              Strategic intelligence for leaders who require precision and clarity in high-stakes decisions.
             </motion.p>
           </motion.div>
         </div>
       </section>
 
       {/* Mission Section */}
-      <section className="py-24 bg-white relative overflow-hidden">
-        {/* Background pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'radial-gradient(circle at 2px 2px, #3b82f6 1px, transparent 0)',
-            backgroundSize: '40px 40px'
-          }}></div>
-        </div>
-
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <section className="py-20 bg-[#0F1011] border-t border-[#2B2D2E]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <motion.h2 
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-bold text-gray-900 mb-8"
-            >
+            <h2 className="text-4xl md:text-5xl font-semibold text-[#E6E7E8] mb-8">
               Our Mission
-            </motion.h2>
+            </h2>
+            <p className="text-xl text-[#B5B7BB] max-w-4xl mx-auto leading-relaxed">
+              We believe that in an age of information overload, the true competitive advantage lies not in having more data, but in having clearer insight. AcronIQ exists to transform complexity into clarity, uncertainty into confidence, and information into intelligence.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-12 shadow-xl border border-blue-100"
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-center p-8 bg-[#151617] rounded-sm border border-[#2B2D2E]"
             >
-              <p className="text-2xl font-semibold text-gray-900 mb-6 leading-relaxed">
-                AcronIQ is an intelligence research organisation focused on developing systems that enhance strategic decision-making.
-              </p>
-              <p className="text-xl text-gray-700 leading-relaxed">
-                We build tools that allow individuals and organisations to see clearly, think precisely, and act with confidence.
+              <div className="w-12 h-12 bg-[#C28B4A] rounded-sm flex items-center justify-center mx-auto mb-6">
+                <span className="text-lg font-semibold text-[#111213]">1</span>
+              </div>
+              <h3 className="text-2xl font-semibold text-[#E6E7E8] mb-4">Precision</h3>
+              <p className="text-[#B5B7BB]">
+                Data translated into clear insight through disciplined analysis and structured thinking.
               </p>
             </motion.div>
-          </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-center p-8 bg-[#151617] rounded-sm border border-[#2B2D2E]"
+            >
+              <div className="w-12 h-12 bg-[#C28B4A] rounded-sm flex items-center justify-center mx-auto mb-6">
+                <span className="text-lg font-semibold text-[#111213]">2</span>
+              </div>
+              <h3 className="text-2xl font-semibold text-[#E6E7E8] mb-4">Trust</h3>
+              <p className="text-[#B5B7BB]">
+                Advisory informed by emotional intelligence and deep understanding of strategic context.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-center p-8 bg-[#151617] rounded-sm border border-[#2B2D2E]"
+            >
+              <div className="w-12 h-12 bg-[#C28B4A] rounded-sm flex items-center justify-center mx-auto mb-6">
+                <span className="text-lg font-semibold text-[#111213]">3</span>
+              </div>
+              <h3 className="text-2xl font-semibold text-[#E6E7E8] mb-4">Foresight</h3>
+              <p className="text-[#B5B7BB]">
+                Strategic anticipation, not reaction. Intelligence that positions you ahead of market shifts.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Founder Story Section */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-[#111213] border-t border-[#2B2D2E]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -105,12 +122,8 @@ export default function About() {
               transition={{ type: "spring", stiffness: 100 }}
               whileHover={{ scale: 1.02 }}
             >
-              <div className="bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 rounded-3xl p-10 text-white shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 relative overflow-hidden">
-                {/* Animated background effect */}
-                <div className="absolute inset-0 opacity-20">
-                  <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full blur-3xl"></div>
-                  <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-300 rounded-full blur-3xl"></div>
-                </div>
+              <div className="bg-[#151617] rounded-sm p-10 border border-[#2B2D2E] relative overflow-hidden">
+                <div className="absolute inset-0 pointer-events-none opacity-[0.02]" style={{backgroundImage:"radial-gradient(circle at 1px 1px, #C28B4A 1px, transparent 0)",backgroundSize:"24px 24px"}} />
 
                 <div className="relative z-10">
                   <motion.div 
@@ -121,19 +134,19 @@ export default function About() {
                     transition={{ delay: 0.2 }}
                   >
                     <motion.div 
-                      className="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-xl"
-                      whileHover={{ rotate: 360, scale: 1.1 }}
-                      transition={{ duration: 0.6 }}
+                      className="w-24 h-24 bg-[#C28B4A] rounded-sm flex items-center justify-center"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.3 }}
                     >
-                      <FaBrain className="text-5xl text-blue-600" />
+                      <FaBrain className="text-4xl text-[#111213]" />
                     </motion.div>
                     <div>
-                      <h3 className="text-3xl font-bold">Joel Ogunniyi</h3>
-                      <p className="text-blue-100 text-lg">Founder & Chief Executive Officer</p>
+                      <h3 className="text-3xl font-semibold text-[#E6E7E8]">Joel Ogunniyi</h3>
+                      <p className="text-[#C28B4A] text-lg font-mono tracking-wider text-sm uppercase">Founder & CEO</p>
                     </div>
                   </motion.div>
                   <motion.p 
-                    className="text-xl leading-relaxed mb-6 italic"
+                    className="text-xl leading-relaxed mb-6 text-[#E6E7E8] italic"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}

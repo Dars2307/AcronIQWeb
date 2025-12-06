@@ -90,7 +90,7 @@ export default function Contact() {
         </motion.div>
       )}
 
-      <section className="py-20 bg-gradient-to-br from-navy to-navy-light text-white">
+      <section className="py-20 bg-[#111213] text-[#E6E7E8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -98,9 +98,19 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Get in Touch</h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Have a question or ready to transform your business? We'd love to hear from you.
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="font-mono tracking-[0.2em] text-xs text-[#C28B4A] mb-6 uppercase"
+            >
+              Strategic Intelligence Advisory
+            </motion.p>
+            <h1 className="text-5xl md:text-6xl font-semibold mb-6">
+              Get in Touch
+            </h1>
+            <p className="text-xl text-[#B5B7BB] max-w-3xl mx-auto">
+              Ready to transform complexity into clarity? Let's discuss how AcronIQ can help your organisation make better strategic decisions.
             </p>
           </motion.div>
         </div>
