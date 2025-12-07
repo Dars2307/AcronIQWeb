@@ -10,6 +10,7 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [showProductsDropdown, setShowProductsDropdown] = useState(false);
+  const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(null);
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -18,6 +19,22 @@ export function Header() {
     { href: "/roadmap", label: "Roadmap" },
     { href: "/contact", label: "Contact" },
   ];
+
+  // Handle dropdown with delay
+  const handleMouseEnter = () => {
+    if (dropdownTimeout) {
+      clearTimeout(dropdownTimeout);
+      setDropdownTimeout(null);
+    }
+    setShowProductsDropdown(true);
+  };
+
+  const handleMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setShowProductsDropdown(false);
+    }, 150); // 150ms delay
+    setDropdownTimeout(timeout);
+  };
 
   // Close dropdown when clicking outside
   const handleClickOutside = (e: MouseEvent) => {
@@ -66,8 +83,8 @@ export function Header() {
               {/* Products Dropdown */}
               <div 
                 className="relative products-dropdown-container"
-                onMouseEnter={() => setShowProductsDropdown(true)}
-                onMouseLeave={() => setShowProductsDropdown(false)}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
               >
                 <button 
                   onClick={() => setShowProductsDropdown(!showProductsDropdown)}
@@ -78,7 +95,11 @@ export function Header() {
                 </button>
                 
                 {showProductsDropdown && (
-                  <div className="absolute top-full left-0 mt-2 w-56 bg-[#151617] rounded-sm shadow-xl border border-[#2B2D2E] py-2 z-50">
+                  <div 
+                    className="absolute top-full left-0 mt-1 w-56 bg-[#151617] rounded-sm shadow-xl border border-[#2B2D2E] py-2 z-50"
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                  >
                     <Link
                       href="/products"
                       onClick={() => setShowProductsDropdown(false)}
