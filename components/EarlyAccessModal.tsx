@@ -65,8 +65,8 @@ export default function EarlyAccessModal({ open, onClose }: EarlyAccessModalProp
       <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
         <div className="sticky top-0 bg-white rounded-t-2xl border-b border-gray-100 px-6 py-4 flex justify-between items-center">
           <div>
-            <h2 className="text-2xl font-bold text-gray-900">Get Early Access</h2>
-            <p className="text-gray-600">Be first to experience AcronIQ Veritus. Join the waitlist.</p>
+            <h2 className="text-2xl font-bold text-gray-900">Request Private Beta Access</h2>
+            <p className="text-gray-600">Join the exclusive Veritus private beta program.</p>
           </div>
           <button 
             onClick={onClose} 
@@ -260,7 +260,7 @@ export default function EarlyAccessModal({ open, onClose }: EarlyAccessModalProp
                     onChange={e => update('consent_marketing', e.target.checked)} 
                   />
                   <span className="text-sm text-gray-700">
-                    Send me research updates & early access news.
+                    Send me research updates & private beta news.
                   </span>
                 </label>
               </div>
@@ -270,7 +270,7 @@ export default function EarlyAccessModal({ open, onClose }: EarlyAccessModalProp
                 className="w-full bg-blue-600 text-white px-6 py-4 rounded-lg hover:bg-blue-700 transition-colors font-semibold text-lg disabled:opacity-50 disabled:cursor-not-allowed"
                 disabled={loading || !form.consent_terms}
               >
-                {loading ? 'Submitting...' : 'Join the Waitlist'}
+                {loading ? 'Submitting...' : 'Request Beta Access'}
               </button>
 
               <p className="text-center text-sm text-gray-500">
@@ -284,9 +284,9 @@ export default function EarlyAccessModal({ open, onClose }: EarlyAccessModalProp
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">You're on the list!</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Beta Request Submitted!</h3>
               <p className="text-gray-600 mb-4">
-                We've sent a confirmation to your email. We'll be in touch soon with early access details.
+                We've sent a confirmation to your email. We'll review your application and be in touch soon with private beta access details.
               </p>
               {done.dup && (
                 <p className="text-sm text-blue-600 mb-4">
