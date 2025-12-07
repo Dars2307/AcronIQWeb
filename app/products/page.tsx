@@ -36,45 +36,9 @@ export default function Products() {
         "48-hour delivery guarantee"
       ],
       link: "/veritus",
-      status: "Available",
+      status: "Private Beta",
       pricing: "From £199",
       highlight: true
-    },
-    {
-      name: "Signals",
-      tagline: "Signal Over Noise", 
-      description: "Market intelligence dashboards that cut through information overload to deliver strategic foresight.",
-      tier: "Professional",
-      icon: FaChartLine,
-      features: [
-        "Real-time market analysis",
-        "Trend identification & forecasting",
-        "Competitive intelligence tracking", 
-        "Strategic alert system",
-        "Custom dashboard creation",
-        "API integration capabilities"
-      ],
-      link: "/signals",
-      status: "Development",
-      pricing: "Coming Q2 2025"
-    },
-    {
-      name: "BusinessHub",
-      tagline: "Secure Collaboration",
-      description: "Executive workspace designed for strategic collaboration and secure decision workflows.", 
-      tier: "Enterprise",
-      icon: FaShieldAlt,
-      features: [
-        "Secure client workspace",
-        "Strategic document management",
-        "Executive collaboration tools",
-        "Decision workflow automation",
-        "Multi-stakeholder access",
-        "Enterprise-grade security"
-      ],
-      link: "/businesshub", 
-      status: "Coming Soon",
-      pricing: "Enterprise Pricing"
     }
   ];
 
@@ -113,26 +77,25 @@ export default function Products() {
               Strategic Intelligence Portfolio
             </motion.p>
             <h1 className="text-6xl md:text-8xl font-semibold mb-8 leading-tight">
-              Instruments of <span className="text-[#C28B4A]">Precision</span>
+              <span className="text-[#C28B4A]">Veritus</span> — Strategic Intelligence Engine
             </h1>
             <p className="text-2xl text-[#B5B7BB] max-w-5xl mx-auto leading-relaxed mb-12">
-              Three strategic instruments engineered for leaders who require absolute clarity in high-stakes decisions. Each solution represents the pinnacle of intelligence architecture.
+              Our flagship strategic intelligence platform for high-stakes decision-making. The first in the AcronIQ suite, with additional platforms planned for 2026.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link href="/veritus">
                 <button className="bg-[#C28B4A] text-[#111213] px-10 py-4 rounded-sm font-semibold text-lg hover:opacity-90 transition-opacity flex items-center justify-center space-x-3">
                   <FaCrown className="text-xl" />
-                  <span>Explore Veritus</span>
+                  <span>Request Private Beta Access</span>
                   <FaArrowRight className="text-sm" />
                 </button>
               </Link>
-              <button 
-                onClick={() => setShowEarlyAccess(true)}
-                className="border border-[#2B2D2E] text-[#E6E7E8] px-10 py-4 rounded-sm font-semibold text-lg hover:border-[#C28B4A]/50 transition-colors"
-              >
-                Request Portfolio Access
-              </button>
+              <Link href="/veritus/pricing">
+                <button className="border border-[#2B2D2E] text-[#E6E7E8] px-10 py-4 rounded-sm font-semibold text-lg hover:border-[#C28B4A]/50 transition-colors">
+                  View Pricing Plans
+                </button>
+              </Link>
             </div>
           </motion.div>
         </div>
@@ -149,14 +112,15 @@ export default function Products() {
             className="text-center mb-20"
           >
             <h2 className="text-5xl md:text-6xl font-semibold text-[#E6E7E8] mb-6">
-              Strategic Arsenal
+              Veritus Platform
             </h2>
             <p className="text-xl text-[#B5B7BB] max-w-4xl mx-auto">
-              Purpose-built intelligence solutions for executives who understand that clarity is not optional when the stakes are highest.
+              Our flagship strategic intelligence engine for executives who understand that clarity is not optional when the stakes are highest. Additional platforms planned for 2026.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
+          <div className="flex justify-center mb-20">
+            <div className="max-w-md w-full">
             {products.map((product, index) => {
               const Icon = product.icon;
               return (
@@ -216,26 +180,17 @@ export default function Products() {
                       ))}
                     </div>
                     
-                    {product.status === 'Available' ? (
-                      <Link href={product.link}>
-                        <button className="w-full bg-[#C28B4A] text-[#111213] py-4 px-6 rounded-sm font-semibold text-lg hover:opacity-90 transition-opacity flex items-center justify-center space-x-3">
-                          <span>Access {product.name}</span>
-                          <FaArrowRight className="text-sm" />
-                        </button>
-                      </Link>
-                    ) : (
-                      <button 
-                        onClick={() => setShowEarlyAccess(true)}
-                        className="w-full border border-[#2B2D2E] text-[#E6E7E8] py-4 px-6 rounded-sm font-semibold text-lg hover:border-[#C28B4A]/50 transition-colors flex items-center justify-center space-x-3"
-                      >
-                        <span>Join Priority Access</span>
-                        <FaChevronRight className="text-sm" />
+                    <Link href={product.link}>
+                      <button className="w-full bg-[#C28B4A] text-[#111213] py-4 px-6 rounded-sm font-semibold text-lg hover:opacity-90 transition-opacity flex items-center justify-center space-x-3">
+                        <span>Request Private Beta Access</span>
+                        <FaArrowRight className="text-sm" />
                       </button>
-                    )}
+                    </Link>
                   </div>
                 </motion.div>
               );
             })}
+            </div>
           </div>
         </div>
       </section>

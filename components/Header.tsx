@@ -101,14 +101,6 @@ export function Header() {
                     onMouseLeave={handleMouseLeave}
                   >
                     <Link
-                      href="/products"
-                      onClick={() => setShowProductsDropdown(false)}
-                      className="block px-4 py-3 text-[#E6E7E8] hover:bg-[#2B2D2E] hover:text-[#C28B4A] transition-colors duration-200"
-                    >
-                      <div className="font-medium">Our Products</div>
-                      <div className="text-xs text-[#B5B7BB] mt-0.5">Strategic Intelligence Portfolio</div>
-                    </Link>
-                    <Link
                       href="/veritus"
                       onClick={() => setShowProductsDropdown(false)}
                       className="block px-4 py-3 text-[#E6E7E8] hover:bg-[#2B2D2E] hover:text-[#C28B4A] transition-colors duration-200"
@@ -122,8 +114,12 @@ export function Header() {
                       className="block px-4 py-3 text-[#E6E7E8] hover:bg-[#2B2D2E] hover:text-[#C28B4A] transition-colors duration-200"
                     >
                       <div className="font-medium">Pricing</div>
-                      <div className="text-xs text-[#B5B7BB] mt-0.5">Plans & Investment</div>
+                      <div className="text-xs text-[#B5B7BB] mt-0.5">Private Beta Plans</div>
                     </Link>
+                    <div className="px-4 py-3 text-[#666] cursor-not-allowed">
+                      <div className="font-medium text-[#666]">Additional Platforms</div>
+                      <div className="text-xs text-[#555] mt-0.5">Coming 2026</div>
+                    </div>
                   </div>
                 )}
               </div>
@@ -132,7 +128,7 @@ export function Header() {
                 onClick={() => setShowModal(true)}
                 className="bg-[#C28B4A] text-[#111213] px-6 py-2 rounded-sm hover:opacity-90 transition-opacity duration-200 font-medium"
               >
-                Early Access
+                Private Beta Access
               </button>
             </div>
 

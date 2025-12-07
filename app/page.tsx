@@ -21,27 +21,9 @@ export default function Home() {
       title: "AcronIQ Veritus",
       tagline: "Intelligence With Purpose",
       description:
-        "Our strategic core. Veritus translates ambiguity into decisive direction with explainable AI reasoning.",
-      label: "Core Engine",
-      cta: { href: "/products", text: "See Veritus" },
-    },
-    {
-      key: "signals",
-      title: "AcronIQ Signals",
-      tagline: "Signal over noise",
-      description:
-        "AI‑driven dashboards that reveal what matters in complex systems so leaders can act with clarity.",
-      label: "In Development",
-      cta: { href: "/early-access", text: "Join Signals Beta" },
-    },
-    {
-      key: "businesshub",
-      title: "BusinessHub",
-      tagline: "Secure client workspace",
-      description:
-        "A premium, secure portal for collaboration, insights, and decision workflows — designed for executive teams.",
-      label: "Coming Soon",
-      cta: { href: "/contact", text: "Explore BusinessHub" },
+        "Our strategic intelligence engine for high-stakes decision-making. The first platform in the AcronIQ suite.",
+      label: "Private Beta",
+      cta: { href: "/veritus", text: "Request Private Beta Access" },
     },
   ];
 
@@ -65,7 +47,7 @@ export default function Home() {
           </motion.p>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
             <button onClick={() => setShowEarlyAccess(true)} className="inline-flex items-center px-8 py-4 bg-[#C28B4A] text-[#111213] font-medium rounded-sm hover:opacity-90 transition">
-              Join the Early Access Programme
+              Request Private Beta Access
               <FaChevronRight className="ml-2" />
             </button>
           </motion.div>
@@ -76,31 +58,33 @@ export default function Home() {
       <section className="py-28 bg-[#111213] text-[#E6E7E8] border-t border-[#2B2D2E]">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="mb-14">
-            <h2 className="text-4xl md:text-5xl font-semibold mb-3">Precision tools for decisive leaders</h2>
-            <p className="text-[#B5B7BB] text-lg">Veritus, Signals, and BusinessHub — built to move from noise to clarity.</p>
+            <h2 className="text-4xl md:text-5xl font-semibold mb-3">Veritus — our strategic intelligence engine</h2>
+            <p className="text-[#B5B7BB] text-lg">AcronIQ Research is currently focused on Veritus. Additional platforms are planned for 2026.</p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {productsShowcase.map((p) => (
-              <motion.div key={p.key} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="group p-6 rounded-sm bg-[#151617] border border-[#2B2D2E]">
-                <div className="text-xs uppercase tracking-widest text-[#C28B4A] mb-2">{p.label}</div>
-                <h3 className="text-2xl font-semibold mb-1">{p.title}</h3>
-                <p className="text-sm text-[#B5B7BB] mb-6">{p.tagline}</p>
+          <div className="flex justify-center">
+            <div className="max-w-md">
+              {productsShowcase.map((p) => (
+                <motion.div key={p.key} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="group p-6 rounded-sm bg-[#151617] border border-[#2B2D2E]">
+                  <div className="text-xs uppercase tracking-widest text-[#C28B4A] mb-2">{p.label}</div>
+                  <h3 className="text-2xl font-semibold mb-1">{p.title}</h3>
+                  <p className="text-sm text-[#B5B7BB] mb-6">{p.tagline}</p>
 
-                <div className="aspect-video w-full rounded-sm bg-[#2B2D2E] flex items-center justify-center mb-5">
-                  <button className="inline-flex items-center px-3 py-2 bg-[#111213] text-[#E6E7E8] border border-[#3a3b3c] rounded-sm hover:bg-[#1a1b1c] transition">
-                    <FaPlay className="mr-2 text-[#C28B4A]" />
-                    Watch 30s demo
-                  </button>
-                </div>
+                  <div className="aspect-video w-full rounded-sm bg-[#2B2D2E] flex items-center justify-center mb-5">
+                    <button className="inline-flex items-center px-3 py-2 bg-[#111213] text-[#E6E7E8] border border-[#3a3b3c] rounded-sm hover:bg-[#1a1b1c] transition">
+                      <FaPlay className="mr-2 text-[#C28B4A]" />
+                      Watch 30s demo
+                    </button>
+                  </div>
 
-                <p className="text-sm text-[#D0D1D3] mb-6">{p.description}</p>
-                <Link href={p.cta.href} className="inline-flex items-center text-[#C28B4A] hover:text-[#d29b5a]">
-                  {p.cta.text}
-                  <FaChevronRight className="ml-2 text-sm" />
-                </Link>
-              </motion.div>
-            ))}
+                  <p className="text-sm text-[#D0D1D3] mb-6">{p.description}</p>
+                  <Link href={p.cta.href} className="inline-flex items-center text-[#C28B4A] hover:text-[#d29b5a]">
+                    {p.cta.text}
+                    <FaChevronRight className="ml-2 text-sm" />
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
