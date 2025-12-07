@@ -8,14 +8,14 @@ import Link from "next/link";
 import { 
   FaCrown, 
   FaArrowRight, 
-  FaShield, 
+  FaShieldAlt, 
   FaBrain, 
   FaChartLine, 
   FaLock,
   FaCheckCircle,
   FaGlobe,
   FaUsers,
-  FaDiamond
+  FaGem
 } from "react-icons/fa";
 
 export default function Veritus() {
@@ -30,7 +30,7 @@ export default function Veritus() {
     {
       title: "Decision Validation", 
       description: "Risk assessment and scenario modelling for executive choices",
-      icon: FaShield
+      icon: FaShieldAlt
     },
     {
       title: "Intelligence Synthesis",
@@ -108,7 +108,7 @@ export default function Veritus() {
             >
               <div className="bg-[#151617] border border-[#2B2D2E] rounded-sm p-8">
                 <div className="flex items-center space-x-3 mb-6">
-                  <FaDiamond className="text-[#C28B4A] text-lg" />
+                  <FaGem className="text-[#C28B4A] text-lg" />
                   <span className="text-[#E6E7E8] font-semibold">Executive Intelligence Brief</span>
                 </div>
                 <div className="space-y-4 text-sm">
@@ -245,7 +245,7 @@ export default function Veritus() {
                 </div>
                 <div className="flex items-center justify-between py-3">
                   <span className="text-[#B5B7BB]">Response Time</span>
-                  <span className="text-green-400">< 24 Hours</span>
+                  <span className="text-green-400">&lt; 24 Hours</span>
                 </div>
               </div>
             </motion.div>
