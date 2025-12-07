@@ -8,9 +8,9 @@ import Link from "next/link";
 import { 
   FaCrown, 
   FaArrowRight, 
-  FaShield, 
+  FaShieldAlt, 
   FaCheckCircle, 
-  FaDiamond,
+  FaGem,
   FaStar,
   FaLock,
   FaPhone,
@@ -263,7 +263,7 @@ export default function VeritusPricing() {
               transition={{ duration: 0.6 }}
             >
               <div className="flex items-center space-x-3 mb-6">
-                <FaDiamond className="text-[#C28B4A] text-2xl" />
+                <FaGem className="text-[#C28B4A] text-2xl" />
                 <h2 className="text-3xl md:text-4xl font-semibold text-[#E6E7E8]">
                   Enterprise Intelligence
                 </h2>
