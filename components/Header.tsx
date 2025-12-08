@@ -101,6 +101,14 @@ export function Header() {
                     onMouseLeave={handleMouseLeave}
                   >
                     <Link
+                      href="/products"
+                      onClick={() => setShowProductsDropdown(false)}
+                      className="block px-4 py-3 text-[#E6E7E8] hover:bg-[#2B2D2E] hover:text-[#C28B4A] transition-colors duration-200"
+                    >
+                      <div className="font-medium">Products Overview</div>
+                      <div className="text-xs text-[#B5B7BB] mt-0.5">Strategic Intelligence Suite</div>
+                    </Link>
+                    <Link
                       href="/veritus"
                       onClick={() => setShowProductsDropdown(false)}
                       className="block px-4 py-3 text-[#E6E7E8] hover:bg-[#2B2D2E] hover:text-[#C28B4A] transition-colors duration-200"
