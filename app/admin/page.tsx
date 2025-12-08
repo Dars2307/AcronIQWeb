@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Layout from "@/components/Layout";
+import AdminAuth from "@/components/admin/AdminAuth";
 import { motion } from "framer-motion";
 import { 
   FaEdit, 
@@ -149,8 +150,9 @@ export default function AdminCMS() {
   };
 
   return (
-    <Layout>
-      <div className="min-h-screen bg-[#111213] text-[#E6E7E8]">
+    <AdminAuth>
+      <Layout>
+        <div className="min-h-screen bg-[#111213] text-[#E6E7E8]">
         {/* Header */}
         <div className="bg-[#0F1011] border-b border-[#2B2D2E] py-6">
           <div className="max-w-7xl mx-auto px-6">
@@ -236,8 +238,9 @@ export default function AdminCMS() {
           item={editingItem}
           type={activeTab}
         />
-      </div>
-    </Layout>
+        </div>
+      </Layout>
+    </AdminAuth>
   );
 }
 
