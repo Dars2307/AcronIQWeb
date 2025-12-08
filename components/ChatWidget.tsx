@@ -11,7 +11,7 @@ export default function ChatWidget({ onClose }: { onClose: () => void }) {
     {
       role: "assistant",
       content:
-        "Hello! I'm AcronIQ Assist, here to help you navigate our platform. AcronIQ provides clarity in complexity through strategic intelligence and AI advisory. I can help you learn about our products, Early Access programme, or site navigation. How can I assist you today?",
+        "Hello! I'm AcronIQ Assist, here to help you navigate our platform. AcronIQ is currently focused on Veritus, our strategic intelligence engine for high-stakes decision-making. I can help you learn about Veritus, our Private Beta programme, or site navigation. How can I assist you today?",
     },
   ]);
   const [input, setInput] = useState("");
@@ -38,7 +38,7 @@ export default function ChatWidget({ onClose }: { onClose: () => void }) {
       if (!res.ok) throw new Error("Request failed");
       const data = await res.json();
       const answer = (data && data.answer) ||
-        "I'm here to help with questions about AcronIQ's strategic intelligence solutions, products, and Early Access programme. For strategic analysis requiring precision and trust, I'd recommend speaking with Veritus, our Strategic Intelligence Advisor. What would you like to know?";
+        "I'm here to help with questions about AcronIQ's Veritus platform and Private Beta programme. Veritus is our flagship strategic intelligence engine for executives who require absolute clarity in high-stakes decisions. What would you like to know?";
       setMessages((prev) => [...prev, { role: "assistant", content: answer } as Message]);
     } catch (e) {
       setMessages((prev) => [
@@ -46,7 +46,7 @@ export default function ChatWidget({ onClose }: { onClose: () => void }) {
         {
           role: "assistant",
           content:
-            "I'm having trouble connecting. Quick guide: AcronIQ offers Veritus (Strategic Intelligence Advisor), Signals (market intelligence), BusinessHub (secure workspace), and Early Access programs.",
+            "I'm having trouble connecting. Quick guide: AcronIQ is currently focused on Veritus, our strategic intelligence engine for high-stakes decision-making. Additional platforms are planned for 2026. Join our Private Beta programme to get early access.",
         } as Message,
       ]);
     } finally {
@@ -67,9 +67,9 @@ export default function ChatWidget({ onClose }: { onClose: () => void }) {
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, y: 20, scale: 0.95 }}
       transition={{ type: "spring", stiffness: 300, damping: 30 }}
-      className="fixed bottom-28 right-8 w-80 bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden z-50"
+      className="fixed bottom-28 right-8 w-80 bg-[#151617] rounded-2xl shadow-2xl border border-[#2B2D2E] overflow-hidden z-50"
     >
-      <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-4 flex items-center justify-between">
+      <div className="bg-[#111213] border-b border-[#2B2D2E] text-[#E6E7E8] p-4 flex items-center justify-between">
         <div className="font-semibold">AcronIQ Assist</div>
         <button aria-label="Close chat" onClick={onClose} className="hover:opacity-80">
           <FaTimes />
@@ -86,8 +86,8 @@ export default function ChatWidget({ onClose }: { onClose: () => void }) {
               exit={{ opacity: 0, y: -6 }}
               className={
                 m.role === "user"
-                  ? "ml-10 bg-blue-50 text-gray-900 p-3 rounded-lg shadow-sm border border-blue-100"
-                  : "mr-10 bg-gray-50 text-gray-900 p-3 rounded-lg shadow-sm border border-gray-100"
+                  ? "ml-10 bg-[#C28B4A]/10 text-[#E6E7E8] p-3 rounded-lg shadow-sm border border-[#C28B4A]/20"
+                  : "mr-10 bg-[#2B2D2E] text-[#E6E7E8] p-3 rounded-lg shadow-sm border border-[#2B2D2E]"
               }
             >
               {m.content}
@@ -97,26 +97,26 @@ export default function ChatWidget({ onClose }: { onClose: () => void }) {
         <div ref={endRef} />
       </div>
 
-      <div className="p-3 border-t border-gray-200 bg-white">
+      <div className="p-3 border-t border-[#2B2D2E] bg-[#151617]">
         <div className="flex items-end gap-2">
           <textarea
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={onKeyDown}
             rows={2}
-            placeholder="Ask about strategic intelligence, products, or Early Access…"
-            className="flex-1 resize-none rounded-md border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Ask about Veritus or Private Beta access…"
+            className="flex-1 resize-none rounded-md border border-[#2B2D2E] bg-[#111213] text-[#E6E7E8] p-2 focus:outline-none focus:ring-2 focus:ring-[#C28B4A] placeholder-[#B5B7BB]"
           />
           <button
             onClick={send}
             disabled={loading}
-            className="h-10 w-10 rounded-md bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 disabled:opacity-50"
+            className="h-10 w-10 rounded-md bg-[#C28B4A] text-[#111213] flex items-center justify-center hover:opacity-90 disabled:opacity-50"
             aria-label="Send"
           >
             <FaPaperPlane className="text-sm" />
           </button>
         </div>
-        <div className="text-[10px] text-gray-400 mt-1">
+        <div className="text-[10px] text-[#B5B7BB] mt-1">
           AcronIQ Assist — Your Platform Guide
         </div>
       </div>
