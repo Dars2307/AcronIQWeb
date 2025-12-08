@@ -80,11 +80,11 @@ Our focused approach to building the AcronIQ suite.
 
 ### Current Focus: Veritus Private Beta
 
-- Q1 2025: Private Beta Programme (Active)
-- Q2 2025: General Availability Launch
-- Q3 2025: Advanced Analytics Features
+- Q4 2025: Private Beta Programme (Active)
+- Q3 2026: General Availability Launch
+- Q4 2026: Advanced Analytics Features
 
-### Future Platforms (2026)
+### Future Platforms (2027+)
 
 - Market Intelligence Dashboards
 - Secure Collaboration Tools

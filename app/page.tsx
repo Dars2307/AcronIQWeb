@@ -28,9 +28,9 @@ export default function Home() {
   ];
 
   const timeline = [
-    { q: "Q1", year: "2026", title: "Early Access Launch", note: "Select partners onboarded" },
-    { q: "Q2", year: "2026", title: "Signals Platform Beta", note: "First dashboards in production" },
-    { q: "Q3", year: "2026", title: "Advisory Expansion", note: "Broader executive engagements" },
+    { q: "Q4", year: "2025", title: "Private Beta Active", note: "Building with strategic partners" },
+    { q: "Q3", year: "2026", title: "Veritus Launch", note: "General availability" },
+    { q: "Q4", year: "2026", title: "Advanced Analytics", note: "Enhanced intelligence features" },
   ];
 
   return (

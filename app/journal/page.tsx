@@ -273,8 +273,9 @@ At AcronIQ, we're designing intelligence systems that don't just give answers â€
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="py-20 bg-[#111213] text-[#E6E7E8]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-32 bg-[#111213] text-[#E6E7E8] overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none opacity-[0.03]" style={{backgroundImage:"radial-gradient(circle at 1px 1px, #C28B4A 1px, transparent 0)",backgroundSize:"32px 32px"}} />
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -289,16 +290,26 @@ At AcronIQ, we're designing intelligence systems that don't just give answers â€
             >
               Strategic Intelligence Journal
             </motion.p>
-            <h1 className="text-4xl md:text-5xl font-semibold mb-6">
-              Insights & Research
+            <h1 className="text-5xl md:text-7xl font-semibold mb-8 leading-tight">
+              Strategic Insights
             </h1>
-            <p className="text-xl text-[#B5B7BB] max-w-3xl mx-auto leading-relaxed">
-              Thought leadership on AI, strategy, and the future of intelligence.
-            </p>
-            <p className="text-lg text-gray-400 max-w-3xl mx-auto mt-4 leading-relaxed">
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="text-xl text-[#B5B7BB] max-w-3xl mx-auto leading-relaxed mb-4"
+            >
+              Thought leadership on strategic intelligence and high-stakes decision-making.
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6 }}
+              className="text-lg text-[#B5B7BB] max-w-3xl mx-auto leading-relaxed"
+            >
               Exploring the intersection of artificial intelligence, strategic decision-making, and the evolving landscape 
               of business intelligence. We share insights on navigating complexity, building with precision, and leading in the age of AI.
-            </p>
+            </motion.p>
             
             {/* Publishing Cadence */}
             <div className="mt-8 max-w-2xl mx-auto">

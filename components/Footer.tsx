@@ -1,118 +1,137 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaRocket, FaShieldAlt, FaBrain } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="relative bg-[#0F1011] text-[#E6E7E8] py-20 border-t border-[#2B2D2E] overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.02]" style={{backgroundImage:"radial-gradient(circle at 1px 1px, #C28B4A 1px, transparent 0)",backgroundSize:"24px 24px"}} />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="md:col-span-2">
-            <Link href="/" className="inline-block mb-6">
-              <Image 
-                src="/images/AcronIQ-Primary-Logo.png" 
-                alt="AcronIQ Research Logo" 
-                width={140} 
-                height={70}
-                className="object-contain"
-              />
+            <Link href="/" className="inline-flex items-center mb-8 group">
+              <div className="w-12 h-12 bg-[#C28B4A] rounded-sm flex items-center justify-center mr-4 group-hover:opacity-90 transition-opacity">
+                <FaBrain className="text-2xl text-[#111213]" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-semibold text-[#E6E7E8]">AcronIQ Research</h3>
+                <p className="text-xs text-[#C28B4A] font-mono tracking-wider uppercase">Strategic Intelligence Organisation</p>
+              </div>
             </Link>
-            <p className="text-gray-300 text-lg mb-4 max-w-md">
-              Strategic Intelligence & AI Advisory services for leaders who require precision and clarity in high-stakes decisions.
+            
+            <p className="text-[#B5B7BB] text-lg mb-6 max-w-md leading-relaxed">
+              We're currently focused on Veritus, our strategic intelligence engine for high-stakes decision-making. Additional platforms planned for 2026.
             </p>
-            <p className="text-gray-400 text-sm">
-              United Kingdom
+            
+            <div className="flex items-center space-x-4 mb-6">
+              <div className="w-2 h-2 bg-[#C28B4A] rounded-full animate-pulse"></div>
+              <p className="text-[#B5B7BB] text-sm">
+                Private Beta Programme Active
+              </p>
+            </div>
+            
+            <p className="text-[#B5B7BB] text-sm">
+              🏴󠁧󠁢󠁳󠁣󠁴󠁿 Founded in Edinburgh · Built for the era of AI
             </p>
           </div>
 
-          {/* Quick Links */}
+          {/* Navigation */}
           <div>
-            <h3 className="font-semibold text-lg mb-4 text-white">Navigation</h3>
-            <ul className="space-y-3">
+            <h3 className="font-semibold text-lg mb-6 text-[#C28B4A] flex items-center">
+              <FaShieldAlt className="mr-2" />
+              Navigation
+            </h3>
+            <ul className="space-y-4">
               <li>
-                <Link href="/about" className="text-gray-300 hover:text-blue-400 transition-colors">
-                  About Us
+                <Link href="/veritus" className="text-[#B5B7BB] hover:text-[#C28B4A] transition-colors flex items-center group">
+                  <span className="w-1 h-1 bg-[#C28B4A] rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                  Veritus Platform
                 </Link>
               </li>
               <li>
-                <Link href="/products" className="text-gray-300 hover:text-blue-400 transition-colors">
-                  Products
+                <Link href="/veritus/pricing" className="text-[#B5B7BB] hover:text-[#C28B4A] transition-colors flex items-center group">
+                  <span className="w-1 h-1 bg-[#C28B4A] rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                  Pricing Plans
                 </Link>
               </li>
               <li>
-                <Link href="/journal" className="text-gray-300 hover:text-blue-400 transition-colors">
-                  Journal
+                <Link href="/about" className="text-[#B5B7BB] hover:text-[#C28B4A] transition-colors flex items-center group">
+                  <span className="w-1 h-1 bg-[#C28B4A] rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                  About AcronIQ
                 </Link>
               </li>
               <li>
-                <Link href="/roadmap" className="text-gray-300 hover:text-blue-400 transition-colors">
-                  Roadmap
+                <Link href="/journal" className="text-[#B5B7BB] hover:text-[#C28B4A] transition-colors flex items-center group">
+                  <span className="w-1 h-1 bg-[#C28B4A] rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                  Strategic Insights
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-300 hover:text-blue-400 transition-colors">
-                  Contact
+                <Link href="/roadmap" className="text-[#B5B7BB] hover:text-[#C28B4A] transition-colors flex items-center group">
+                  <span className="w-1 h-1 bg-[#C28B4A] rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                  Product Roadmap
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-[#B5B7BB] hover:text-[#C28B4A] transition-colors flex items-center group">
+                  <span className="w-1 h-1 bg-[#C28B4A] rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                  Contact Us
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Connect */}
+          {/* Connect & Beta Access */}
           <div>
-            <h3 className="font-semibold text-lg mb-4 text-white">Connect</h3>
-            <div className="space-y-3">
+            <h3 className="font-semibold text-lg mb-6 text-[#C28B4A] flex items-center">
+              <FaRocket className="mr-2" />
+              Connect
+            </h3>
+            <div className="space-y-4">
               <Link 
-                href="/early-access" 
-                className="block text-blue-400 hover:text-blue-300 transition-colors font-medium"
+                href="/veritus" 
+                className="block bg-[#C28B4A] text-[#111213] px-4 py-3 rounded-sm font-semibold hover:opacity-90 transition-opacity text-center"
               >
-                Early Access Programme
+                Request Private Beta Access
               </Link>
-              <div className="flex space-x-4 pt-2">
-                <a
-                  href="https://www.linkedin.com/company/acroniq/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-blue-400 transition-colors"
-                  aria-label="LinkedIn"
-                >
-                  <FaLinkedin size={20} />
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-blue-400 transition-colors"
-                  aria-label="Twitter"
-                >
-                  <FaTwitter size={20} />
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-blue-400 transition-colors"
-                  aria-label="GitHub"
-                >
-                  <FaGithub size={20} />
-                </a>
+              
+              <div className="pt-4 border-t border-[#2B2D2E]">
+                <p className="text-[#B5B7BB] text-sm mb-3">Follow our journey</p>
+                <div className="flex space-x-4">
+                  <a
+                    href="https://www.linkedin.com/company/acroniq/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-[#151617] border border-[#2B2D2E] rounded-sm flex items-center justify-center text-[#B5B7BB] hover:text-[#C28B4A] hover:border-[#C28B4A] transition-colors"
+                    aria-label="LinkedIn"
+                  >
+                    <FaLinkedin size={18} />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-700 mt-12 pt-8">
+        <div className="border-t border-[#2B2D2E] mt-16 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-center md:text-left">
-              <p className="text-gray-400 text-sm mb-2">
+              <p className="text-[#B5B7BB] text-sm mb-2">
                 © 2025 AcronIQ Research. All rights reserved.
               </p>
-              <p className="text-gray-500 text-sm italic">
-                AcronIQ Research · Founded in Edinburgh · Built for the era of AI
+              <p className="text-[#B5B7BB] text-sm">
+                Strategic Intelligence Organisation · Veritus Private Beta Programme
               </p>
             </div>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href="/legal/privacy" className="text-gray-400 hover:text-white text-sm transition-colors">
+              <Link href="/legal/privacy" className="text-[#B5B7BB] hover:text-[#C28B4A] text-sm transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="/legal/terms" className="text-gray-400 hover:text-white text-sm transition-colors">
+              <Link href="/legal/terms" className="text-[#B5B7BB] hover:text-[#C28B4A] text-sm transition-colors">
                 Terms of Service
               </Link>
             </div>

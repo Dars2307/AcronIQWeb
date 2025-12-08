@@ -13,7 +13,7 @@ export default function Roadmap() {
       focus: "Strategic intelligence engine with select partners",
       description: "Building Veritus with C-suite executives and strategic decision-makers. Private beta participants get preferential pricing, priority support, and influence on product development.",
       icon: <FaRocket className="text-3xl text-[#C28B4A]" />,
-      timeline: "Q1 2025 (Active)"
+      timeline: "Q4 2025 (Active)"
     },
     {
       phase: "Phase 2: Veritus General Availability", 
@@ -22,7 +22,7 @@ export default function Roadmap() {
       focus: "Public launch of strategic intelligence platform",
       description: "Full market launch of Veritus with 24-48 hour strategic analysis, executive decision support, and board-level presentations. Pricing from £199-£2,499.",
       icon: <FaCog className="text-3xl text-orange-400" />,
-      timeline: "Q2 2025"
+      timeline: "Q3 2026"
     },
     {
       phase: "Phase 3: Advanced Analytics Features",
@@ -31,24 +31,24 @@ export default function Roadmap() {
       focus: "Enhanced intelligence capabilities",
       description: "Advanced scenario modeling, real-time competitive intelligence, and enhanced AI reasoning capabilities for complex strategic challenges.",
       icon: <FaChartLine className="text-3xl text-blue-400" />,
-      timeline: "Q3 2025"
+      timeline: "Q4 2026"
     },
     {
       phase: "Phase 4: Market Intelligence Platform",
-      status: "Future (2026)",
+      status: "Future (2027)",
       statusColor: "bg-gray-500", 
       focus: "Signal detection & trend forecasting",
       description: "Dedicated platform for market intelligence dashboards and early-warning systems that surface emerging signals before they mainstream.",
       icon: <FaNetworkWired className="text-3xl text-gray-400" />,
-      timeline: "2026"
+      timeline: "2027"
     },
     {
       phase: "Phase 5: Secure Collaboration Tools",
-      status: "Future (2026)",
+      status: "Future (2027+)",
       statusColor: "bg-gray-500",
       focus: "Executive workspace & collaboration", 
       description: "Secure client workspace for strategic collaboration, document management, and decision workflows designed for executive teams.",
-      icon: <FaNetworkWired className="text-3xl text-gray-400" />,
+      icon: <FaShieldAlt className="text-3xl text-gray-400" />,
       timeline: "2027+"
     }
   ];
@@ -56,33 +56,48 @@ export default function Roadmap() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-32 bg-[#111213] text-[#E6E7E8] overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none opacity-[0.03]" style={{backgroundImage:"radial-gradient(circle at 1px 1px, #C28B4A 1px, transparent 0)",backgroundSize:"32px 32px"}} />
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="font-mono tracking-[0.2em] text-xs text-[#C28B4A] mb-6 uppercase"
+            >
+              Strategic Development
+            </motion.p>
+            <h1 className="text-5xl md:text-7xl font-semibold mb-8 leading-tight">
               Product Roadmap
             </h1>
-            <div className="w-24 h-1 bg-blue-500 mx-auto mb-8"></div>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-4">
-              AcronIQ builds in defined strategic phases.
-            </p>
-            <p className="text-lg text-gray-400 max-w-4xl mx-auto leading-relaxed mb-4">
-              Each phase strengthens our intelligence foundation and expands our capability to deliver actionable insight at scale.
-            </p>
-            <p className="text-lg text-blue-400 font-medium">
-              This roadmap is transparent and may evolve based on research outcomes and market learning.
-            </p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="text-xl text-[#B5B7BB] max-w-3xl mx-auto mb-4"
+            >
+              Our focused approach to building the AcronIQ suite with surgical precision.
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6 }}
+              className="text-lg text-[#B5B7BB] max-w-3xl mx-auto"
+            >
+              Each phase strengthens our strategic intelligence foundation.
+            </motion.p>
           </motion.div>
         </div>
       </section>
 
       {/* Roadmap Table */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#0F1011] border-t border-[#2B2D2E]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Desktop Table */}
           <div className="hidden lg:block">
@@ -90,19 +105,19 @@ export default function Roadmap() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden"
+              className="bg-[#151617] rounded-sm border border-[#2B2D2E] overflow-hidden"
             >
-              <div className="bg-gray-900 text-white">
+              <div className="bg-[#111213] text-[#E6E7E8] border-b border-[#2B2D2E]">
                 <div className="grid grid-cols-5 gap-4 p-6 font-semibold">
-                  <div>Phase</div>
-                  <div>Status</div>
-                  <div>Focus</div>
-                  <div>Description</div>
-                  <div>Timeline</div>
+                  <div className="text-[#C28B4A]">Phase</div>
+                  <div className="text-[#C28B4A]">Status</div>
+                  <div className="text-[#C28B4A]">Focus</div>
+                  <div className="text-[#C28B4A]">Description</div>
+                  <div className="text-[#C28B4A]">Timeline</div>
                 </div>
               </div>
               
-              <div className="divide-y divide-gray-200">
+              <div className="divide-y divide-[#2B2D2E]">
                 {phases.map((phase, index) => (
                   <motion.div
                     key={phase.phase}
@@ -110,17 +125,17 @@ export default function Roadmap() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="grid grid-cols-5 gap-4 p-6 hover:bg-gray-50 transition-colors"
+                    className="grid grid-cols-5 gap-4 p-6 hover:bg-[#1a1b1c] transition-colors text-[#E6E7E8]"
                   >
-                    <div className="font-semibold text-gray-900">{phase.phase}</div>
+                    <div className="font-semibold text-[#E6E7E8]">{phase.phase}</div>
                     <div>
                       <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium text-white ${phase.statusColor}`}>
                         {phase.status}
                       </span>
                     </div>
-                    <div className="text-gray-700 font-medium">{phase.focus}</div>
-                    <div className="text-gray-600">{phase.description}</div>
-                    <div className="text-gray-500 font-mono text-sm">{phase.timeline}</div>
+                    <div className="text-[#B5B7BB] font-medium">{phase.focus}</div>
+                    <div className="text-[#B5B7BB]">{phase.description}</div>
+                    <div className="text-[#C28B4A] font-mono text-sm">{phase.timeline}</div>
                   </motion.div>
                 ))}
               </div>
