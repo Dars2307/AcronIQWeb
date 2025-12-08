@@ -11,12 +11,152 @@ export default function Journal() {
   const entries = [
     {
       date: "December 2025",
+      series: "Strategic Intelligence Series",
+      focus: "The Strategic Surgeon Approach: Forensic Precision in Executive Decision-Making",
+      author: "Joel Ogunniyi",
+      authorTitle: "Founder & Strategic Advisor, AcronIQ Research",
+      authorCredentials: "Strategic Intelligence specialist with a decade in high-stakes advisory",
+      icon: <FaChartLine className="text-2xl text-[#C28B4A]" />,
+      keyTakeaways: [
+        "Strategic intelligence requires surgical precision, not broad analysis",
+        "The 'Strategic Surgeon' combines MI6 precision with McKinsey rigor",
+        "48-hour delivery windows force clarity and eliminate analysis paralysis",
+        "Explainable AI reasoning builds executive confidence in high-stakes decisions"
+      ],
+      summary: "In high-stakes executive decision-making, the difference between success and failure often comes down to precision. Like a surgeon operating on a critical patient, strategic intelligence must be forensically precise, methodologically sound, and delivered with absolute confidence.",
+      fullArticle: `The Strategic Surgeon approach represents a fundamental shift in how executives receive and act on strategic intelligence.
+
+**Traditional consulting operates like general medicine** — broad diagnostics, lengthy treatment plans, and generic prescriptions. But when the stakes are highest, executives need surgical precision.
+
+**The Strategic Surgeon methodology combines:**
+
+**1. MI6-level Intelligence Precision**
+Every insight is forensically validated, cross-referenced, and confidence-scored. No black-box recommendations.
+
+**2. McKinsey-grade Analytical Rigor**
+Structured problem-solving frameworks applied with military precision to strategic challenges.
+
+**3. Palantir-scale Data Integration**
+Multi-source intelligence synthesis that reveals patterns invisible to traditional analysis.
+
+**4. 48-Hour Delivery Guarantee**
+Surgical precision delivered at the speed of executive decision-making.
+
+This is the foundation of Veritus — our strategic intelligence engine built for executives who can't afford ambiguity.`,
+      details: [
+        "Why surgical precision beats broad analysis in strategic decisions",
+        "The intelligence methodology behind 48-hour strategic delivery",
+        "How explainable AI builds executive confidence",
+        "Case studies from our Private Beta programme"
+      ]
+    },
+    {
+      date: "December 2025",
+      series: "Private Beta Insights",
+      focus: "Why Speed Matters in Strategic Intelligence: The 24-48 Hour Advantage",
+      author: "Joel Ogunniyi",
+      authorTitle: "Founder & Strategic Advisor, AcronIQ Research",
+      authorCredentials: "Strategic Intelligence specialist with a decade in high-stakes advisory",
+      icon: <FaCog className="text-2xl text-[#C28B4A]" />,
+      keyTakeaways: [
+        "Traditional consulting timelines (weeks/months) miss critical decision windows",
+        "24-48 hour strategic analysis forces clarity and eliminates overthinking",
+        "Speed without precision is worthless; precision without speed is often too late",
+        "Private Beta participants report 10:1 ROI through faster decision-making"
+      ],
+      summary: "In today's executive environment, the window for strategic decisions is shrinking rapidly. Market conditions change overnight, competitive threats emerge suddenly, and opportunities disappear before traditional consulting can even begin their analysis.",
+      fullArticle: `The competitive advantage of rapid strategic intelligence cannot be overstated in today's executive environment.
+
+**The Traditional Consulting Problem:**
+- Week 1-2: Scoping and contracting
+- Week 3-6: Data gathering and stakeholder interviews  
+- Week 7-10: Analysis and framework development
+- Week 11-12: Report writing and presentation prep
+- Week 13+: Delivery and implementation planning
+
+**By week 13, the strategic landscape has often shifted entirely.**
+
+**The Veritus Approach:**
+- Hour 1-6: Strategic brief and intelligence gathering
+- Hour 7-24: Multi-source analysis and synthesis
+- Hour 25-36: Validation and confidence scoring
+- Hour 37-48: Executive delivery and action planning
+
+**This isn't about rushing analysis — it's about surgical precision applied at executive speed.**
+
+Our Private Beta participants consistently report that faster strategic intelligence leads to:
+- Earlier market entry
+- Reduced competitive risk
+- Higher confidence in execution
+- Better stakeholder alignment
+
+Speed becomes a strategic weapon when combined with forensic precision.`,
+      details: [
+        "The hidden cost of slow strategic intelligence",
+        "How 48-hour delivery forces analytical clarity",
+        "Private Beta case studies: Speed as competitive advantage",
+        "Building executive confidence through rapid precision"
+      ]
+    },
+    {
+      date: "December 2025",
+      series: "Private Beta Programme",
+      focus: "Building with Strategic Partners: The Veritus Private Beta Journey",
+      author: "Joel Ogunniyi",
+      authorTitle: "Founder & Strategic Advisor, AcronIQ Research",
+      authorCredentials: "Strategic Intelligence specialist with a decade in high-stakes advisory",
+      icon: <FaDatabase className="text-2xl text-[#C28B4A]" />,
+      keyTakeaways: [
+        "Private Beta ensures real-world validation before broader market launch",
+        "Strategic partners provide critical feedback on high-stakes use cases",
+        "Beta participants get preferential pricing and priority feature development",
+        "Building with executives ensures Veritus meets actual decision-making needs"
+      ],
+      summary: "The Veritus Private Beta programme isn't just about early access — it's about building the future of strategic intelligence with the executives who will depend on it most. Our select group of strategic partners are helping shape Veritus into the precision instrument that high-stakes decision-making demands.",
+      fullArticle: `The Private Beta approach ensures that Veritus is built for real-world executive challenges, not theoretical consulting frameworks.
+
+**Why Private Beta Matters for Strategic Intelligence:**
+
+**1. Real-World Validation**
+Every feature is tested against actual strategic decisions with real consequences.
+
+**2. Executive-Level Feedback**
+Our Beta participants are C-suite executives, board members, and strategic decision-makers who understand the stakes.
+
+**3. Iterative Precision**
+We refine our intelligence methodology based on outcomes, not assumptions.
+
+**4. Strategic Partnership**
+Beta participants become long-term strategic partners, not just customers.
+
+**Current Beta Focus Areas:**
+- M&A due diligence and strategic assessment
+- Market entry strategy and competitive intelligence
+- Crisis response and scenario planning
+- Board-level decision support
+
+**Beta Participant Benefits:**
+- Up to 40% off standard pricing (grandfathered)
+- Priority access to new features
+- Direct founder access for strategic consultation
+- Influence on product roadmap and development
+
+The result is a strategic intelligence engine built by executives, for executives, tested in the crucible of real high-stakes decisions.`,
+      details: [
+        "How to apply for Private Beta access",
+        "What we look for in strategic partners",
+        "Beta participant success stories",
+        "The roadmap from Beta to general availability"
+      ]
+    },
+    {
+      date: "November 2025",
       series: "Strategic Clarity Series",
       focus: "Why Clarity Matters More Than Information in Strategic Decision-Making",
       author: "Joel Ogunniyi",
-      authorTitle: "Founder & CEO, AcronIQ Research",
-      authorCredentials: "Strategic Advisor specialising in AI-driven decision systems",
-      icon: <FaCode className="text-2xl text-blue-400" />,
+      authorTitle: "Founder & Strategic Advisor, AcronIQ Research",
+      authorCredentials: "Strategic Intelligence specialist with a decade in high-stakes advisory",
+      icon: <FaCode className="text-2xl text-[#C28B4A]" />,
       keyTakeaways: [
         "Leaders fail due to clarity issues, not data scarcity",
         "Data without clarity creates hesitation and fear-based decisions",

@@ -35,7 +35,7 @@ export default function About() {
               transition={{ delay: 0.4 }}
               className="text-xl text-[#B5B7BB] max-w-3xl mx-auto"
             >
-              Strategic intelligence for leaders who require precision and clarity in high-stakes decisions.
+              We're currently focused on Veritus, our strategic intelligence engine for high-stakes decision-making. Additional platforms planned for 2026.
             </motion.p>
           </motion.div>
         </div>
@@ -55,7 +55,7 @@ export default function About() {
               Our Mission
             </h2>
             <p className="text-xl text-[#B5B7BB] max-w-4xl mx-auto leading-relaxed">
-              We believe that in an age of information overload, the true competitive advantage lies not in having more data, but in having clearer insight. AcronIQ exists to transform complexity into clarity, uncertainty into confidence, and information into intelligence.
+              We believe that in an age of information overload, the true competitive advantage lies not in having more data, but in having clearer insight. AcronIQ exists to transform complexity into clarity through Veritus, our strategic intelligence engine built for executives who can't afford ambiguity.
             </p>
           </motion.div>
 
@@ -152,7 +152,7 @@ export default function About() {
                     viewport={{ once: true }}
                     transition={{ delay: 0.4 }}
                   >
-                    "I founded AcronIQ because leaders deserve clarity, even when the world is at its most complex. In an age flooded with data, the true competitive advantage isn't more information—it's precision, trust, and intelligence that resonates."
+                    "I founded AcronIQ because leaders deserve clarity, even when the world is at its most complex. We're building Veritus to turn complexity into certainty for decision-makers who can't afford ambiguity."
                   </motion.p>
                   <motion.p 
                     className="text-blue-50 leading-relaxed text-lg"

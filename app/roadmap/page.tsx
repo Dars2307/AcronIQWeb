@@ -7,47 +7,47 @@ import { FaCog, FaRocket, FaShieldAlt, FaChartLine, FaNetworkWired } from "react
 export default function Roadmap() {
   const phases = [
     {
-      phase: "Phase 1: Internal Research Engine (AcronIQ Veritus Core)",
-      status: "In Progress",
-      statusColor: "bg-blue-500",
-      focus: "Data-driven research workflows",
-      description: "Developing the core intelligence engine that powers business analysis and strategic evaluation reports.",
-      icon: <FaCog className="text-3xl text-blue-400" />,
-      timeline: "Q4 2025"
+      phase: "Phase 1: Veritus Private Beta Programme",
+      status: "Active",
+      statusColor: "bg-[#C28B4A]",
+      focus: "Strategic intelligence engine with select partners",
+      description: "Building Veritus with C-suite executives and strategic decision-makers. Private beta participants get preferential pricing, priority support, and influence on product development.",
+      icon: <FaRocket className="text-3xl text-[#C28B4A]" />,
+      timeline: "Q1 2025 (Active)"
     },
     {
-      phase: "Phase 2: £199 Lean Report Product", 
+      phase: "Phase 2: Veritus General Availability", 
       status: "Upcoming",
       statusColor: "bg-orange-500",
-      focus: "Commercial validation",
-      description: "Offer structured, high-value strategic research reports for founders, investors, and operators.",
-      icon: <FaRocket className="text-3xl text-orange-400" />,
-      timeline: "Q1 2026"
+      focus: "Public launch of strategic intelligence platform",
+      description: "Full market launch of Veritus with 24-48 hour strategic analysis, executive decision support, and board-level presentations. Pricing from £199-£2,499.",
+      icon: <FaCog className="text-3xl text-orange-400" />,
+      timeline: "Q2 2025"
     },
     {
-      phase: "Phase 3: BusinessHub",
+      phase: "Phase 3: Advanced Analytics Features",
       status: "Planned", 
-      statusColor: "bg-gray-500",
-      focus: "Client deliverables and internal operations",
-      description: "Unified environment for report access, client communication, contract management, and team operations.",
-      icon: <FaShieldAlt className="text-3xl text-gray-400" />,
-      timeline: "Q2 2026"
+      statusColor: "bg-blue-500",
+      focus: "Enhanced intelligence capabilities",
+      description: "Advanced scenario modeling, real-time competitive intelligence, and enhanced AI reasoning capabilities for complex strategic challenges.",
+      icon: <FaChartLine className="text-3xl text-blue-400" />,
+      timeline: "Q3 2025"
     },
     {
-      phase: "Phase 4: AcronIQ Signals",
-      status: "Planned",
+      phase: "Phase 4: Market Intelligence Platform",
+      status: "Future (2026)",
       statusColor: "bg-gray-500", 
-      focus: "Pattern detection & trend forecasting",
-      description: "Early-warning system that surfaces emerging market signals before they mainstream.",
-      icon: <FaChartLine className="text-3xl text-gray-400" />,
-      timeline: "Q3 2026"
+      focus: "Signal detection & trend forecasting",
+      description: "Dedicated platform for market intelligence dashboards and early-warning systems that surface emerging signals before they mainstream.",
+      icon: <FaNetworkWired className="text-3xl text-gray-400" />,
+      timeline: "2026"
     },
     {
-      phase: "Phase 5: Enterprise & Integration Layer",
-      status: "Later",
-      statusColor: "bg-gray-400",
-      focus: "API + workflow integrations", 
-      description: "Connect AcronIQ intelligence directly into organisational workflows.",
+      phase: "Phase 5: Secure Collaboration Tools",
+      status: "Future (2026)",
+      statusColor: "bg-gray-500",
+      focus: "Executive workspace & collaboration", 
+      description: "Secure client workspace for strategic collaboration, document management, and decision workflows designed for executive teams.",
       icon: <FaNetworkWired className="text-3xl text-gray-400" />,
       timeline: "2027+"
     }
