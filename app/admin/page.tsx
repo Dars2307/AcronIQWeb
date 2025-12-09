@@ -210,16 +210,16 @@ export default function AdminCMS() {
 
               {/* Content Grid */}
               <div className="grid gap-4">
-                {activeTab === 'site' && siteContent.map((item) => (
+                {activeTab === 'site' && Array.isArray(siteContent) && siteContent.map((item) => (
                   <SiteContentCard key={item.key} item={item} onEdit={setEditingItem} onDelete={handleDelete} />
                 ))}
-                {activeTab === 'products' && products.map((item) => (
+                {activeTab === 'products' && Array.isArray(products) && products.map((item) => (
                   <ProductCard key={item.id} item={item} onEdit={setEditingItem} onDelete={handleDelete} />
                 ))}
-                {activeTab === 'roadmap' && roadmapItems.map((item) => (
+                {activeTab === 'roadmap' && Array.isArray(roadmapItems) && roadmapItems.map((item) => (
                   <RoadmapCard key={item.id} item={item} onEdit={setEditingItem} onDelete={handleDelete} />
                 ))}
-                {activeTab === 'journal' && journalPosts.map((item) => (
+                {activeTab === 'journal' && Array.isArray(journalPosts) && journalPosts.map((item) => (
                   <JournalCard key={item.id} item={item} onEdit={setEditingItem} onDelete={handleDelete} />
                 ))}
               </div>
